@@ -22,6 +22,8 @@ import { AcquaComponent } from './acqua/acqua.component';
 import { AmafibraComponent } from './amafibra/amafibra.component';
 import { AcquaListaComponent } from './acqua/lista/acqua-lista.component';
 import { AmafibraListaComponent } from './amafibra/lista/amafibra-lista.component';
+import { SococoComponent } from './sococo/sococo.component';
+import { SococoListaComponent } from './sococo/lista/sococo-lista.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { AmafibraListaComponent } from './amafibra/lista/amafibra-lista.componen
     AcquaComponent,
     AcquaListaComponent,
     AmafibraComponent,
-    AmafibraListaComponent
+    AmafibraListaComponent,
+    SococoComponent,
+    SococoListaComponent
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,8 @@ import { AcquaComponent } from './acqua/acqua.component';
 import { AmafibraComponent } from './amafibra/amafibra.component';
 import { AcquaListaComponent } from './acqua/lista/acqua-lista.component';
 import { AmafibraListaComponent } from './amafibra/lista/amafibra-lista.component';
+import { SococoComponent } from './sococo/sococo.component';
+import { SococoListaComponent } from './sococo/lista/sococo-lista.component';
 
 export const AppRoutes: Routes = [
     {
@@ -24,8 +26,13 @@ export const AppRoutes: Routes = [
         component: DashboardComponent
     },
     {
+        path: 'sococo',
+        component: SococoComponent
+    },
+    { path: "sococo-lista", component: SococoListaComponent },
+    {
         path: 'acqua',
-        component: AcquaComponent,
+        component: AcquaComponent
     },
     { path: "acqua-lista", component: AcquaListaComponent },
     {
