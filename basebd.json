@@ -1,0 +1,26 @@
+{
+    "sococo": [
+        {
+            "id": 1,
+            "dataLancamento": "2018-04-19",
+            "cocosDesfibrados": "1000",
+            "cocosProcessados": "4000",
+            "cri": "3000",
+            "flococo": "7000",
+            "oleoIndustrialETE": "80000",
+            "oleoIndustrialTipoA": "5000",
+            "torta": "4000"
+        },
+        {
+            "id": 2,
+            "dataLancamento": "2018-04-19",
+            "cocosDesfibrados": "300",
+            "cocosProcessados": "0",
+            "cri": "4500",
+            "flococo": "500",
+            "oleoIndustrialETE": "98000",
+            "oleoIndustrialTipoA": "3000",
+            "torta": "1000"
+        }
+    ]
+}

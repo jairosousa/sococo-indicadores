@@ -1,4 +1,5 @@
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './util-template/user/user.component';
@@ -12,10 +13,8 @@ import { AcquaComponent } from './acqua/acqua.component';
 import { AmafibraComponent } from './amafibra/amafibra.component';
 import { AcquaListaComponent } from './acqua/lista/acqua-lista.component';
 import { AmafibraListaComponent } from './amafibra/lista/amafibra-lista.component';
-import { SococoComponent } from './sococo/sococo.component';
-import { SococoListaComponent } from './sococo/lista/sococo-lista.component';
 
-export const AppRoutes: Routes = [
+export const routes: Routes = [
     {
         path: '',
         redirectTo: 'dashboard',
@@ -25,11 +24,6 @@ export const AppRoutes: Routes = [
         path: 'dashboard',
         component: DashboardComponent
     },
-    {
-        path: 'sococo',
-        component: SococoComponent
-    },
-    { path: "sococo-lista", component: SococoListaComponent },
     {
         path: 'acqua',
         component: AcquaComponent
@@ -71,4 +65,6 @@ export const AppRoutes: Routes = [
         path: 'upgrade',
         component: UpgradeComponent
     }
-]
+];
+
+export const AppRoutes: ModuleWithProviders = RouterModule.forRoot(routes);

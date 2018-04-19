@@ -1,13 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { AppRoutes } from './app.routing';
+
 import { FooterModule } from './shared/footer/footer.module';
 import { NavbarModule} from './shared/navbar/navbar.module';
 import { FixedPluginModule} from './shared/fixedplugin/fixedplugin.module';
 import { NguiMapModule} from '@ngui/map';
+import { SococoModule } from './sococo/sococo.module';
+
+import { AppRoutes } from './app.routing';
 
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { UserComponent } from './util-template/user/user.component';
@@ -22,8 +27,7 @@ import { AcquaComponent } from './acqua/acqua.component';
 import { AmafibraComponent } from './amafibra/amafibra.component';
 import { AcquaListaComponent } from './acqua/lista/acqua-lista.component';
 import { AmafibraListaComponent } from './amafibra/lista/amafibra-lista.component';
-import { SococoComponent } from './sococo/sococo.component';
-import { SococoListaComponent } from './sococo/lista/sococo-lista.component';
+
 
 @NgModule({
   declarations: [
@@ -40,16 +44,18 @@ import { SococoListaComponent } from './sococo/lista/sococo-lista.component';
     AcquaListaComponent,
     AmafibraComponent,
     AmafibraListaComponent,
-    SococoComponent,
-    SococoListaComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(AppRoutes),
+    RouterModule,
+    AppRoutes,
+    FormsModule,
+    HttpModule,
     SidebarModule,
     NavbarModule,
     FooterModule,
     FixedPluginModule,
+    SococoModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'})
 
   ],

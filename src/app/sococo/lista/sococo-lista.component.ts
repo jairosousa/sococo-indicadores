@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SococoService } from '../sococo.service';
+import { Sococo } from '../sococo.model';
 
 @Component({
   selector: 'app-sococo-lista',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SococoListaComponent implements OnInit {
 
-  constructor() { }
+  headerRow: string[];
+  dataRows: Sococo[];
+  constructor(
+    private sococoService: SococoService
+  ) { }
 
   ngOnInit() {
+    this.listaHeaderRow();
+    this.sococoService.getLista()
+      .then((sococo: Sococo[]) => {
+          this.dataRows = sococo
+          console.log(this.dataRows);
+          
+      } )
+      
   }
 
+  public listaHeaderRow(): void {
+    this.headerRow = ['ID', 'Data', 'Cocos Desfibrados', 'Cocos Processados', 'CRI', 'Flococo', 'O.I. ETE', 'O. I. Tipo A', 'Torta'];
+  }
 }
