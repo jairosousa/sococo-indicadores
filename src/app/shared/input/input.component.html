@@ -1,11 +1,11 @@
-<div class="form-group row" [class.has-success]="input.valid && (input.dirty || input.touched)" 
-            [class.has-error]="!input.valid && (input.dirty || input.touched)">
+<div class="form-group row" [class.has-success]="hasSuccess()" 
+            [class.has-error]="hasError()">
     <label class="col-lg-2 col-form-label form-control-label">{{label}}</label>
     <div class="col-lg-10">
 
         <ng-content></ng-content>
 
-        <span class="help-block" *ngIf="!input.valid && (input.dirty || input.touched)">
+        <span class="help-block" *ngIf="hasError()">
             <i class="ti-alert"></i> {{errorMessage}}</span>
     </div>
 </div>
