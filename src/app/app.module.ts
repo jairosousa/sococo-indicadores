@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -49,14 +48,13 @@ import { AmafibraListaComponent } from './amafibra/lista/amafibra-lista.componen
     BrowserModule,
     RouterModule,
     AppRoutes,
-    FormsModule,
     HttpModule,
     SidebarModule,
     NavbarModule,
     FooterModule,
     FixedPluginModule,
-    SococoModule,
-    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'})
+    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'}),
+    SococoModule
 
   ],
   providers: [],

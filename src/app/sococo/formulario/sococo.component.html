@@ -1,4 +1,81 @@
-
-<p>
-  sococo works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <div class="card">
+        <div class="header">
+          <h4 class="title">Cadastro lançamento Sococo</h4>
+        </div>
+        <div class="content">
+          <form #formulario="ngForm" (ngSubmit)="confirmarCadastro()" novalidate>
+            <div class="form-group row">
+              <label for="dataLancamento" class="col-lg-2 col-form-label form-control-label">Data</label>
+              <div class="col-lg-10">
+                <input class="form-control" type="date" id="dataLancamento" name="dataLancamento" ngModel>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="col-lg-2 col-form-label form-control-label">Cocos Desfibrados</label>
+              <div class="col-lg-10">
+                <input class="form-control" type="text" placeholder="Cocos desfibrados" name="cocosDesfibrados" ngModel>
+            
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-2 col-form-label form-control-label">Cocos Processados</label>
+              <div class="col-lg-10">
+                <input class="form-control" type="text" placeholder="Cocos Processados" name="cocosProcessados" ngModel>
+            
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-2 col-form-label form-control-label">CRI</label>
+              <div class="col-lg-10">
+                <input class="form-control" type="text" placeholder="CRI" name="cri" ngModel>
+            
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-2 col-form-label form-control-label">Flococo</label>
+              <div class="col-lg-10">
+                <input class="form-control" type="text" placeholder="Flococo" name="flococo" ngModel>
+            
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-2 col-form-label form-control-label">Óleo Industrial ETE</label>
+              <div class="col-lg-10">
+                <input class="form-control" type="text" placeholder="Óleo Industrial ETE" 
+                name="oleoIndustrialETE" ngModel>
+            
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-2 col-form-label form-control-label">Óleo Industrial Tipo A</label>
+              <div class="col-lg-10">
+                <input class="form-control" type="text" placeholder="Óleo Industrial Tipo A" 
+                name="oleoIndustrialTipoA" ngModel>
+            
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-2 col-form-label form-control-label">Torta</label>
+              <div class="col-lg-10">
+                <input class="form-control" type="text" placeholder="Torta" name="torta" ngModel>
+            
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-2 col-form-label form-control-label"></label>
+              <div class="col-lg-10">
+                <input type="submit" class="btn btn-primary" value="Salvar">
+                <input type="reset" class="btn btn-secondary" value="Cancelar">
+              </div>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

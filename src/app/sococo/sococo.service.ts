@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/toPromise';
@@ -21,9 +21,14 @@ export class SococoService {
     }
 
     public adicionar(sococo: Sococo): Observable<number> {
-        return this.http.post(this.sococoUrl, JSON.stringify(sococo))
-            .map(response => response.json())
-            .map((sococo) => sococo.id)
+        let headers: Headers = new Headers();
+        headers.append('Content-type', 'application/json')
+        return this.http.post(
+            this.sococoUrl, 
+            JSON.stringify(sococo),
+            new RequestOptions({ headers: headers })
+        )
+            .map((response: Response) => response.json().id)
     }
 
     public getLista(): Promise<Sococo[]> {
