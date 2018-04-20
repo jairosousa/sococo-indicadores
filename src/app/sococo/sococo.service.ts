@@ -6,8 +6,10 @@ import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/retry';
+import 'rxjs/add/operator/catch';
 
 import { Sococo } from './sococo.model';
+import { ErrorHandler } from '../ErrorHandler';
 
 @Injectable()
 export class SococoService {
@@ -31,10 +33,10 @@ export class SococoService {
             .map((response: Response) => response.json().id)
     }
 
-    public getLista(): Promise<Sococo[]> {
+    public getLista(): Observable<Sococo[]> {
         return this.http.get(this.sococoUrl)
-            .toPromise()
-            .then((resposta: Response) => resposta.json())
+            .map((resposta: Response) => resposta.json())
+            .catch(ErrorHandler.handlerError)
     }
 
 }

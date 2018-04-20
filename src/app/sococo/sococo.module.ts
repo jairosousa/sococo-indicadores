@@ -5,16 +5,18 @@ import { SococoComponent } from "./formulario/sococo.component";
 import { SococoListaComponent } from "./lista/sococo-lista.component";
 import { SococoService } from "./sococo.service";
 import { SococoRoutingModule } from "./sococo.routing";
+import { InputComponent } from "../shared/input/input.component";
 
 @NgModule({
     imports:[
         CommonModule,
         SococoRoutingModule,
-        FormsModule
+        FormsModule,
     ],
     declarations:[
         SococoComponent,
-        SococoListaComponent
+        SococoListaComponent,
+        InputComponent
     ],
     providers:[
         SococoService

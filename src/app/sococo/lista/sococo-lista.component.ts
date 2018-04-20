@@ -17,13 +17,16 @@ export class SococoListaComponent implements OnInit {
 
   ngOnInit() {
     this.listaHeaderRow();
-    this.sococoService.getLista()
-      .then((sococo: Sococo[]) => {
-          this.dataRows = sococo
-          console.log(this.dataRows);
-          
-      } )
+    this.getLista();
       
+  }
+
+  private getLista(): void {
+    this.sococoService.getLista()
+      .subscribe((sococo: Sococo[]) => {
+        this.dataRows = sococo
+        console.log(this.dataRows);
+      })
   }
 
   public listaHeaderRow(): void {
