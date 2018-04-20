@@ -22,10 +22,12 @@ import { MapsComponent } from './util-template/maps/maps.component';
 import { NotificationsComponent } from './util-template/notifications/notifications.component';
 import { UpgradeComponent } from './util-template/upgrade/upgrade.component';
 import { SidebarModule } from './util-template/sidebar/sidebar.module';
-import { AcquaComponent } from './acqua/acqua.component';
 import { AmafibraComponent } from './amafibra/amafibra.component';
-import { AcquaListaComponent } from './acqua/lista/acqua-lista.component';
 import { AmafibraListaComponent } from './amafibra/lista/amafibra-lista.component';
+import { AcquaModule } from './acqua/acqua.module';
+import { InputComponent } from './shared/input/input.component';
+import { SharedModule } from './shared/shared.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -39,8 +41,6 @@ import { AmafibraListaComponent } from './amafibra/lista/amafibra-lista.componen
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
-    AcquaComponent,
-    AcquaListaComponent,
     AmafibraComponent,
     AmafibraListaComponent,
   ],
@@ -49,13 +49,16 @@ import { AmafibraListaComponent } from './amafibra/lista/amafibra-lista.componen
     RouterModule,
     AppRoutes,
     HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
     SidebarModule,
     NavbarModule,
     FooterModule,
     FixedPluginModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'}),
-    SococoModule
-
+    SococoModule,
+    AcquaModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

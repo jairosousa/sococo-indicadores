@@ -9,9 +9,7 @@ import { IconsComponent } from './util-template/icons/icons.component';
 import { MapsComponent } from './util-template/maps/maps.component';
 import { NotificationsComponent } from './util-template/notifications/notifications.component';
 import { UpgradeComponent } from './util-template/upgrade/upgrade.component';
-import { AcquaComponent } from './acqua/acqua.component';
 import { AmafibraComponent } from './amafibra/amafibra.component';
-import { AcquaListaComponent } from './acqua/lista/acqua-lista.component';
 import { AmafibraListaComponent } from './amafibra/lista/amafibra-lista.component';
 
 export const routes: Routes = [
@@ -24,11 +22,6 @@ export const routes: Routes = [
         path: 'dashboard',
         component: DashboardComponent
     },
-    {
-        path: 'acqua',
-        component: AcquaComponent
-    },
-    { path: "acqua-lista", component: AcquaListaComponent },
     {
         path: 'amafibra',
         component: AmafibraComponent
