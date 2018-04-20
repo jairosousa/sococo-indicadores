@@ -22,7 +22,7 @@ export class SococoService {
         this.sococoUrl = `${environment.base_url}/sococo`
     }
 
-    public adicionar(sococo: Sococo): Observable<number> {
+    public adicionar(sococo: Sococo): Observable<any> {
         let headers: Headers = new Headers();
         headers.append('Content-type', 'application/json')
         return this.http.post(
@@ -30,7 +30,7 @@ export class SococoService {
             JSON.stringify(sococo),
             new RequestOptions({ headers: headers })
         )
-            .map((response: Response) => response.json().id)
+            //.map((response: Response) => response.json())
     }
 
     public getLista(): Observable<Sococo[]> {

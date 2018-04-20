@@ -7,62 +7,47 @@
         </div>
         <div class="content">
           <form #formulario="ngForm" (ngSubmit)="confirmarCadastro()" novalidate>
-            <div class="form-group row">
-              <label for="dataLancamento" class="col-lg-2 col-form-label form-control-label">Data</label>
-              <div class="col-lg-2">
-                <input class="form-control" type="date" id="dataLancamento" name="dataLancamento" ngModel required>
-              </div>
-            </div>
+
+            <app-input errorMessage="Campo Obrigatório" label="Data">
+              <input class="form-control" type="date" id="dataLancamento" 
+              name="dataLancamento" ngModel required>
+            </app-input>
             
-            <app-input errorMessage="Campo Obrigatório" label="Cocos desfribrados">
-              <input class="form-control" type="text" placeholder="Cocos Desfibrados" 
+            <app-input errorMessage="Campo Obrigatório" label="Cocos Desfribrados">
+              <input class="form-control" type="number" placeholder="Cocos Desfibrados" 
                 name="cocosDesfibrados" ngModel required autocomplete="off">
             </app-input>
             
-            <div class="form-group row">
-              <label class="col-lg-2 col-form-label form-control-label">Cocos Processados</label>
-              <div class="col-lg-10">
-                <input class="form-control" type="text" placeholder="Cocos Processados" name="cocosProcessados" ngModel>
+            <app-input errorMessage="Campo Obrigatório" label="Cocos Processados">
+              <input class="form-control" type="number" placeholder="Cocos Processados" 
+              name="cocosProcessados" ngModel required autocomplete="off">
+            </app-input>
             
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-lg-2 col-form-label form-control-label">CRI</label>
-              <div class="col-lg-10">
-                <input class="form-control" type="text" placeholder="CRI" name="cri" ngModel>
+            <app-input errorMessage="Campo Obrigatório" label="CRI">
+              <input class="form-control" type="text" placeholder="CRI"
+              name="cri" ngModel required autocomplete="off">
+            </app-input>
+
+            <app-input errorMessage="Campo Obrigatório" label="Flococo">
+              <input class="form-control" type="number" placeholder="Flococo"
+              name="flococo" ngModel required autocomplete="off">
+            </app-input>
             
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-lg-2 col-form-label form-control-label">Flococo</label>
-              <div class="col-lg-10">
-                <input class="form-control" type="text" placeholder="Flococo" name="flococo" ngModel>
+            <app-input errorMessage="Campo Obrigatório" label="Óleo Industrial ETE">
+              <input class="form-control" type="number" placeholder="Óleo Industrial ETE" 
+              name="oleoIndustrialETE" ngModel required autocomplete="off">
+            </app-input>
+
+            <app-input errorMessage="Campo Obrigatório" label="Óleo Industrial Tipo A">
+              <input class="form-control" type="text" placeholder="Óleo Industrial Tipo A" 
+              name="oleoIndustrialTipoA" ngModel required autocomplete="off">
+            </app-input>
+
+            <app-input errorMessage="Campo Obrigatório" label="Torta">
+              <input class="form-control" type="text" placeholder="Torta" 
+              name="torta" ngModel required autocomplete="off">
+            </app-input>
             
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-lg-2 col-form-label form-control-label">Óleo Industrial ETE</label>
-              <div class="col-lg-10">
-                <input class="form-control" type="text" placeholder="Óleo Industrial ETE" 
-                name="oleoIndustrialETE" ngModel>
-            
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-lg-2 col-form-label form-control-label">Óleo Industrial Tipo A</label>
-              <div class="col-lg-10">
-                <input class="form-control" type="text" placeholder="Óleo Industrial Tipo A" 
-                name="oleoIndustrialTipoA" ngModel>
-            
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-lg-2 col-form-label form-control-label">Torta</label>
-              <div class="col-lg-10">
-                <input class="form-control" type="text" placeholder="Torta" name="torta" ngModel>
-            
-              </div>
-            </div>
             <div class="form-group row">
               <label class="col-lg-2 col-form-label form-control-label"></label>
               <div class="col-lg-10">

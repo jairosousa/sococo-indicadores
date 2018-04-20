@@ -34,7 +34,7 @@ export class SococoComponent implements OnInit {
     )
     this.sococoService.adicionar(sococo)
       .subscribe(response => {
-        console.log(response)
+        
         this.router.navigate(['/sococo-lista']);
       })
   }
