@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class SococoComponent implements OnInit {
 
   @ViewChild('formulario') public formulario: NgForm;
-  
+
   constructor(
     private sococoService: SococoService,
     private router: Router,

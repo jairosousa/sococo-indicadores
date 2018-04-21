@@ -8,23 +8,22 @@ import { NgModel } from '@angular/forms';
 
 export class InputComponent implements OnInit, AfterContentInit {
 
-    @Input() label: string
-    
-    @Input() errorMessage: string
-    
-    input: any
-    
-    @ContentChild(NgModel) model: NgModel
-    
+    @Input() label: string;
+
+    @Input() errorMessage: string;
+
+    input: any;
+
+    @ContentChild(NgModel) model: NgModel;
+
     constructor() { }
-    
+
     ngOnInit() { }
-    
+
     ngAfterContentInit(): void {
-        this.input = this.model
+        this.input = this.model;
         if (this.input === undefined) {
             throw  new Error('Esse component precisa ser usado com uma diretiva nhModel');
-            
         }
     }
 

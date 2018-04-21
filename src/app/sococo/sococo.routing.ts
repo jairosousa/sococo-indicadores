@@ -1,8 +1,8 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-import { SococoComponent } from "./formulario/sococo.component";
-import { SococoListaComponent } from "./lista/sococo-lista.component";
+import { SococoComponent } from './formulario/sococo.component';
+import { SococoListaComponent } from './lista/sococo-lista.component';
 
 
 // rotas para ações Sococo
@@ -12,7 +12,7 @@ const routes: Routes = [
         component: SococoComponent
     },
     {
-        path: "sococo-lista", 
+        path: 'sococo-lista',
         component: SococoListaComponent
     },
 ];
