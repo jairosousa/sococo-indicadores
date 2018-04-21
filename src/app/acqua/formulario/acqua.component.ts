@@ -1,5 +1,9 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { AcquaService } from '../acqua.service';
+import { Router } from '@angular/router';
+import { Acqua } from '../acqua.model';
 
 @Component({
     selector: 'app-acqua',
@@ -8,9 +12,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcquaComponent implements OnInit {
 
-    constructor() { }
+    @ViewChild('formulario') public formulario: NgForm;
+
+    constructor(
+        private acquaService: AcquaService,
+        private router: Router,
+    ) { }
 
     ngOnInit() {
+    }
+
+    public confirmarCadastro(): void {
+        let acqua: Acqua = new Acqua(
+            this.formulario.value.dataLancamento,
+            this.formulario.value.aguaDeCocoSococo,
+            this.formulario.value.aguaDeCocoVerde,
+            this.formulario.value.porcentagemCocoGerminado,
+            this.formulario.value.totalDeCacambas,
+        )
+
+        console.log(acqua);
+        console.log(this.formulario.value);
+        this.acquaService.adicionar(acqua)
+            .subscribe(response => {
+                this.router.navigate(['/acqua-lista']);
+            })
     }
 
 }

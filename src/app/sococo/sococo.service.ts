@@ -14,7 +14,7 @@ import { ErrorHandler } from '../ErrorHandler';
 @Injectable()
 export class SococoService {
 
-    private sococoUrl
+    private sococoUrl;
 
     constructor(
         private http: Http
