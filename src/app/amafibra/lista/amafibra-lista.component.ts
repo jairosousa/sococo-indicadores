@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AmafibraService } from '../amafibra.service';
+import { Amafibra } from '../amafibra.model';
 
 @Component({
   selector: 'app-amafibra-lista',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AmafibraListaComponent implements OnInit {
 
-  constructor() { }
+  headerRow: string[];
+  dataRows: Amafibra[];
+
+  constructor(
+    private amafibraService: AmafibraService
+  ) { }
 
   ngOnInit() {
+    this.listaHeaderRow();
+    this.getLista();
   }
+
+  private getLista(): void {
+    this.amafibraService.getLista()
+      .subscribe((amafibra: Amafibra[]) => {
+        this.dataRows = amafibra
+      })
+  }
+
+  public listaHeaderRow(): void {
+    this.headerRow = ['ID', 'Data', 'Número de Fardos'];
+  } 
 
 }

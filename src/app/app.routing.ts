@@ -9,8 +9,6 @@ import { IconsComponent } from './util-template/icons/icons.component';
 import { MapsComponent } from './util-template/maps/maps.component';
 import { NotificationsComponent } from './util-template/notifications/notifications.component';
 import { UpgradeComponent } from './util-template/upgrade/upgrade.component';
-import { AmafibraComponent } from './amafibra/amafibra.component';
-import { AmafibraListaComponent } from './amafibra/lista/amafibra-lista.component';
 
 export const routes: Routes = [
     {
@@ -21,14 +19,6 @@ export const routes: Routes = [
     {
         path: 'dashboard',
         component: DashboardComponent
-    },
-    {
-        path: 'amafibra',
-        component: AmafibraComponent
-    },
-    {
-        path: 'amafibra-lista',
-        component: AmafibraListaComponent
     },
     {
         path: 'user',

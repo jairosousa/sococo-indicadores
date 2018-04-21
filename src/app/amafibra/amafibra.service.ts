@@ -3,34 +3,33 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
 import { Observable } from "rxjs/Observable";
 
-import { environment } from '../../environments/environment';
+import { environment } from 'environments/environment';
 import { ErrorHandler } from '../ErrorHandler';
-import { Acqua } from './acqua.model';
+import { Amafibra } from './amafibra.model';
 
 @Injectable()
-export class AcquaService {
+export class AmafibraService {
 
-  private acquaUrl;
+  private amafibraUrl;
 
-  constructor(
-    private http: Http
+  constructor(private http: Http
   ) {
-    this.acquaUrl = `${environment.base_url}/acqua`
-   }
+    this.amafibraUrl = `${environment.base_url}/amafibra`
+  }
 
-  public adicionar(acqua: Acqua): Observable<any> {
+  public adicionar(amafibra: Amafibra): Observable<any> {
     let headers: Headers = new Headers();
     headers.append('Content-type', 'application/json')
     return this.http.post(
-      this.acquaUrl,
-      JSON.stringify(acqua),
+      this.amafibraUrl,
+      JSON.stringify(amafibra),
       new RequestOptions({ headers: headers })
     )
-    .map((response: Response) => response.json())
+      .map((response: Response) => response.json())
   }
 
-  public getLista(): Observable<Acqua[]> {
-    return this.http.get(this.acquaUrl)
+  public getLista(): Observable<Amafibra[]> {
+    return this.http.get(this.amafibraUrl)
       .map((resposta: Response) => resposta.json())
       .catch(ErrorHandler.handlerError)
   }

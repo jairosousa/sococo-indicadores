@@ -31,8 +31,6 @@ export class AcquaComponent implements OnInit {
             this.formulario.value.totalDeCacambas,
         )
 
-        console.log(acqua);
-        console.log(this.formulario.value);
         this.acquaService.adicionar(acqua)
             .subscribe(response => {
                 this.router.navigate(['/acqua-lista']);
