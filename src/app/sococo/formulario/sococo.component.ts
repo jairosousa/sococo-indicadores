@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormGroup, NgForm } from '@angular/forms';
+
 import { Sococo } from '../sococo.model';
 import { SococoService } from '../sococo.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sococo',

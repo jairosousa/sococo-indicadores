@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h3 class="text-on-pannel text-primary"><strong class="text-uppercase title-sococo"> Produção diária sococo </strong></h3>
+                </div>
+                <div class="content">
+                    <form #formulario="ngForm" (ngSubmit)="confirmarCadastro()" novalidate>
+
+                        <app-input errorMessage="Campo Obrigatório" label="Data">
+                            <input class="form-control" type="date" id="dataLancamento" name="dataLancamento" ngModel required>
+                        </app-input>
+
+                        <app-input errorMessage="Campo Obrigatório" label="Nº de fardos">
+                            <input class="form-control" type="text" placeholder="quantidade" id="numeroDeFardos" name="numeroDeFardos" ngModel required autocomplete="off">
+                        </app-input>
+
+                        <div class="form-group row">
+                            <label class="col-lg-2 col-form-label form-control-label"></label>
+                            <div class="col-lg-10">
+                                <input type="submit" class="btn btn-primary" value="Salvar" [disabled]="!formulario.valid">
+                                <input type="reset" class="btn btn-secondary" value="Cancelar">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

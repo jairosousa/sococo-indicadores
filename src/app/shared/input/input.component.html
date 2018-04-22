@@ -1,10 +1,7 @@
-<div class="form-group row" [class.has-success]="hasSuccess()" [class.has-error]="hasError()">
-    01
-    <label class="col-lg-2 col-form-label form-control-label">{{label}} 11</label> 123
-    <div class="col-lg-10">
-        345
+<div class="form-group col-lg-6" [class.has-success]="hasSuccess()" [class.has-error]="hasError()">
+    <label class="col-lg-4 col-form-label form-control-label">{{label}}</label>
+    <div class="col-lg-6">
         <ng-content></ng-content>
-        678
-        <span class="help-block" *ngIf="hasError()"> <i class="ti-alert"></i> {{errorMessage}}</span> 890
+        <span class="help-block" *ngIf="hasError()"> <i class="ti-alert"></i> {{errorMessage}}</span>
     </div>
 </div>

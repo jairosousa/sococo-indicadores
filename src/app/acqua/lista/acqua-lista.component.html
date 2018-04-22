@@ -1,3 +1,32 @@
-<p>
-  Acqua Lista!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="header">
+          <h4 class="title">Lista Cadastro</h4>
+          <p class="category">Lançamentos diários da empresa Acqua</p>
+          <a [routerLink]="['/acqua']" class="btn btn-link scc-link-panel">Novo cadastro</a>
+        </div>
+        <div class="content table-responsive table-full-width">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th *ngFor="let cell of headerRow">{{ cell }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of dataRows">
+                <td>{{row.id}}</td>
+                <td>{{row.dataLancamento | date:'dd/MM/yyyy'}}</td>
+                <td>{{row.aguaDeCocoSococo}}</td>
+                <td>{{row.aguaDeCocoVerde}}</td>
+                <td>{{row.porcentagemCocoGerminado}}</td>
+                <td>{{row.totalDeCacambas}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>

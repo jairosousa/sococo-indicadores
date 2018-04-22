@@ -8,33 +8,31 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/retry';
 import 'rxjs/add/operator/catch';
 
-import { Sococo } from './sococo.model';
+import { Amafibra } from './amafibra.model';
 import { ErrorHandler } from '../ErrorHandler';
 
 @Injectable()
-export class SococoService {
+export class AmafibraService {
 
-    private sococoUrl;
+    private amafibraUrl;
 
-    constructor(
-        private http: Http
-    ) {
-        this.sococoUrl = `${environment.base_url}/sococo`;
+    constructor( private http: Http) {
+        this.amafibraUrl = `${environment.base_url}/amafibra`;
     }
 
-    public adicionar(sococo: Sococo): Observable<any> {
+    public adicionar(amafibra: Amafibra): Observable<any> {
         const headers: Headers = new Headers();
         headers.append('Content-type', 'application/json')
         return this.http.post(
-            this.sococoUrl,
-            JSON.stringify(sococo),
+            this.amafibraUrl,
+            JSON.stringify(amafibra),
             new RequestOptions({ headers: headers })
         );
-            // .map((response: Response) => response.json())
+        // .map((response: Response) => response.json())
     }
 
-    public getLista(): Observable<Sococo[]> {
-        return this.http.get(this.sococoUrl)
+    public getLista(): Observable<Amafibra[]> {
+        return this.http.get(this.amafibraUrl)
             .map((resposta: Response) => resposta.json())
             .catch(ErrorHandler.handlerError)
     }
