@@ -26,7 +26,7 @@ export class AcquaService {
       JSON.stringify(acqua),
       new RequestOptions({ headers: headers })
     )
-    //.map((response: Response) => response.json())
+    .map((response: Response) => response.json())
   }
 
   public getLista(): Observable<Acqua[]> {

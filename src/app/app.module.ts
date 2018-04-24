@@ -2,17 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
-
-import { AppComponent } from './app.component';
-
 import { FooterModule } from './shared/footer/footer.module';
 import { NavbarModule} from './shared/navbar/navbar.module';
 import { FixedPluginModule} from './shared/fixedplugin/fixedplugin.module';
 import { NguiMapModule} from '@ngui/map';
-import { SococoModule } from './sococo/sococo.module';
-
 import { AppRoutes } from './app.routing';
-
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './util-template/user/user.component';
 import { TableComponent } from './util-template/table/table.component';
@@ -22,11 +16,13 @@ import { MapsComponent } from './util-template/maps/maps.component';
 import { NotificationsComponent } from './util-template/notifications/notifications.component';
 import { UpgradeComponent } from './util-template/upgrade/upgrade.component';
 import { SidebarModule } from './util-template/sidebar/sidebar.module';
-import { AcquaModule } from './acqua/acqua.module';
 import { InputComponent } from './shared/input/input.component';
 import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AppComponent } from './app.component';
 import { AmafibraModule } from './amafibra/amafibra.module';
+import { AcquaModule } from './acqua/acqua.module';
+import { SococoModule } from './sococo/sococo.module';
 
 
 @NgModule({
@@ -39,8 +35,8 @@ import { AmafibraModule } from './amafibra/amafibra.module';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-    UpgradeComponent
-],
+    UpgradeComponent,
+  ],
   imports: [
     BrowserModule,
     RouterModule,

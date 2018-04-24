@@ -12,7 +12,6 @@ export class AmafibraListaComponent implements OnInit {
   headerRow: string[];
   dataRows: Amafibra[];
 
-
   constructor(
     private amafibraService: AmafibraService
   ) { }
@@ -26,11 +25,11 @@ export class AmafibraListaComponent implements OnInit {
     this.amafibraService.getLista()
       .subscribe((amafibra: Amafibra[]) => {
         this.dataRows = amafibra;
-        console.log(this.dataRows);
-      });
+      })
   }
 
   public listaHeaderRow(): void {
-    this.headerRow = ['ID', 'Nº de fardos'];
-  };
+    this.headerRow = ['ID', 'Data', 'Número de Fardos'];
+  }
+
 }
