@@ -1,70 +1,83 @@
 {
-  "sococo": [
-    {
-      "id": 1,
-      "dataLancamento": "2018-04-19",
-      "cocosDesfibrados": "1000",
-      "cocosProcessados": "4000",
-      "cri": "3000",
-      "flococo": "7000",
-      "oleoIndustrialETE": "80000",
-      "oleoIndustrialTipoA": "5000",
-      "torta": "4000"
-    },
-    {
-      "id": 2,
-      "dataLancamento": "2018-04-19",
-      "cocosDesfibrados": "300",
-      "cocosProcessados": "0",
-      "cri": "4500",
-      "flococo": "500",
-      "oleoIndustrialETE": "98000",
-      "oleoIndustrialTipoA": "3000",
-      "torta": "1000"
-    },
-    {
-      "dataLancamento": "2018-04-19",
-      "cocosDesfibrados": "232423",
-      "cocosProcessados": "4235",
-      "cri": "252",
-      "flococo": "2525",
-      "oleoIndustrialETE": "5658",
-      "oleoIndustrialTipoA": "9879",
-      "torta": "114",
-      "id": 3
-    },
-    {
-      "dataLancamento": "2018-04-19",
-      "cocosDesfibrados": "1200",
-      "cocosProcessados": "780",
-      "cri": "800",
-      "flococo": "5000",
-      "oleoIndustrialETE": "3000",
-      "oleoIndustrialTipoA": "6000",
-      "torta": "7850",
-      "id": 4
-    },
-    {
-      "dataLancamento": "2018-04-20",
-      "cocosDesfibrados": "1200",
-      "cocosProcessados": "15230",
-      "cri": "1584",
-      "flococo": "1230",
-      "oleoIndustrialETE": "1152",
-      "oleoIndustrialTipoA": "5600",
-      "torta": "1000",
-      "id": 5
-    },
-    {
-      "dataLancamento": "2018-04-20",
-      "cocosDesfibrados": "120000",
-      "cocosProcessados": "1552",
-      "cri": "1151",
-      "flococo": "15554",
-      "oleoIndustrialETE": "9633",
-      "oleoIndustrialTipoA": "11555",
-      "torta": "3625",
-      "id": 6
-    }
-  ]
+    "sococo": [{
+            "id": 1,
+            "dataLancamento": "2018-04-19",
+            "cocosDesfibrados": "1000",
+            "cocosProcessados": "4000",
+            "cri": "3000",
+            "flococo": "7000",
+            "oleoIndustrialETE": "80000",
+            "oleoIndustrialTipoA": "5000",
+            "torta": "4000"
+        },
+        {
+            "id": 2,
+            "dataLancamento": "2018-04-19",
+            "cocosDesfibrados": "300",
+            "cocosProcessados": "0",
+            "cri": "4500",
+            "flococo": "500",
+            "oleoIndustrialETE": "98000",
+            "oleoIndustrialTipoA": "3000",
+            "torta": "1000"
+        },
+        {
+            "dataLancamento": "2018-04-19",
+            "cocosDesfibrados": "232423",
+            "cocosProcessados": "4235",
+            "cri": "252",
+            "flococo": "2525",
+            "oleoIndustrialETE": "5658",
+            "oleoIndustrialTipoA": "9879",
+            "torta": "114",
+            "id": 3
+        },
+        {
+            "dataLancamento": "2018-04-19",
+            "cocosDesfibrados": "1200",
+            "cocosProcessados": "780",
+            "cri": "800",
+            "flococo": "5000",
+            "oleoIndustrialETE": "3000",
+            "oleoIndustrialTipoA": "6000",
+            "torta": "7850",
+            "id": 4
+        },
+        {
+            "dataLancamento": "2018-04-20",
+            "cocosDesfibrados": "1200",
+            "cocosProcessados": "15230",
+            "cri": "1584",
+            "flococo": "1230",
+            "oleoIndustrialETE": "1152",
+            "oleoIndustrialTipoA": "5600",
+            "torta": "1000",
+            "id": 5
+        },
+        {
+            "dataLancamento": "2018-04-20",
+            "cocosDesfibrados": "120000",
+            "cocosProcessados": "1552",
+            "cri": "1151",
+            "flococo": "15554",
+            "oleoIndustrialETE": "9633",
+            "oleoIndustrialTipoA": "11555",
+            "torta": "3625",
+            "id": 6
+        }
+    ],
+    "CRI-MES": [
+        { "jan-18": 112 },
+        { "fev-18": 441 },
+        { "mar-18": 321 },
+        { "abr-18": 332 },
+        { "mai-18": 555 },
+        { "jun-18": 115 },
+        { "jul-18": 551 },
+        { "ago-18": 928 },
+        { "set-18": 883 },
+        { "out-18": 763 },
+        { "nov-18": 123 },
+        { "dez-18": 134 }
+    ]
 }

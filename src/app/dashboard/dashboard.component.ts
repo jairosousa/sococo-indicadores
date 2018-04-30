@@ -48,12 +48,12 @@ export class DashboardComponent implements OnInit {
     this.cocoSococoCocoVerdeChart();
     this.caixaPadraoChart();
     this.cocoGerminadorChart();
-    this.totolDeCacambasChart();
-    this.numeroFardosChart();
+    this.totalDeCacambasChart();
+     this.numeroFardosChart();
 
-    this.examplePizza();
-    this.exempleLineHours();
-    this.exempleLinesMonth();
+    // this.examplePizza();
+    // this.exempleLineHours();
+    // this.exempleLinesMonth();
   }
 
   exempleLinesMonth() {
@@ -284,7 +284,7 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  totolDeCacambasChart() {
+  totalDeCacambasChart() {
     const oleoOption = {
       seriesDistance: 10,
       showPoint: true,
@@ -314,7 +314,7 @@ export class DashboardComponent implements OnInit {
       }]
     ];
 
-    new Chartist.Line('#totolDeCacambasChart', this.dataDay, oleoOption, responsiveOption);
+    new Chartist.Line('#totalDeCacambasChart', this.dataDay, oleoOption, responsiveOption);
 
   }
 

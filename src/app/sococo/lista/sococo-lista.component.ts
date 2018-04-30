@@ -18,15 +18,14 @@ export class SococoListaComponent implements OnInit {
   ngOnInit() {
     this.listaHeaderRow();
     this.getLista();
-      
   }
 
   private getLista(): void {
     this.sococoService.getLista()
       .subscribe((sococo: Sococo[]) => {
-        this.dataRows = sococo
+        this.dataRows = sococo;
         console.log(this.dataRows);
-      })
+      });
   }
 
   public listaHeaderRow(): void {

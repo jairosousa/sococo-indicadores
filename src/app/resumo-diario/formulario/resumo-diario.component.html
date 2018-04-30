@@ -1,0 +1,101 @@
+<div class="container-fluid">
+
+    <div class="row row-sococo">
+        <div class="col-lg-12 col-md-12">
+            <form #formulario="ngForm" (ngSubmit)="confirmarCadastro()" novalidate>
+                <!-- PRODUCAO SOCOCO -->
+                <div class="card row">
+                    <div class="header">
+                        <h3 class="text-on-pannel-sococo text-primary"><strong class="text-uppercase title-sococo"> Produção Diária Sococo </strong></h3>
+                    </div>
+                    <div class="content">
+                        <!-- <app-input errorMessage="Campo Obrigatório" label="Data">
+                            <input class="form-control" type="date" id="dataLancamento" name="dataLancamento" ngModel required>
+                        </app-input> -->
+
+                        <app-input errorMessage="Campo Obrigatório" label="Cocos Desfribrados (und)">
+                            <input class="form-control" type="number" placeholder="Cocos Desfibrados" name="cocosDesfibrados" ngModel required autocomplete="off">
+                        </app-input>
+
+                        <app-input errorMessage="Campo Obrigatório" label="Cocos Processados (und)">
+                            <input class="form-control" type="number" placeholder="Cocos Processados" name="cocosProcessados" ngModel required autocomplete="off">
+                        </app-input>
+
+                        <app-input errorMessage="Campo Obrigatório" label="CRI (Kg)">
+                            <input class="form-control" type="text" placeholder="CRI" name="cri" ngModel required autocomplete="off">
+                        </app-input>
+
+                        <app-input errorMessage="Campo Obrigatório" label="Flococo (Kg)">
+                            <input class="form-control" type="number" placeholder="Flococo" name="flococo" ngModel required autocomplete="off">
+                        </app-input>
+
+                        <app-input errorMessage="Campo Obrigatório" label="Óleo Industrial ETE (L)">
+                            <input class="form-control" type="number" placeholder="Óleo Industrial ETE" name="oleoIndustrialETE" ngModel required autocomplete="off">
+                        </app-input>
+
+                        <app-input errorMessage="Campo Obrigatório" label="Óleo Industrial Tipo A (L)">
+                            <input class="form-control" type="text" placeholder="Óleo Industrial Tipo A" name="oleoIndustrialTipoA" ngModel required autocomplete="off">
+                        </app-input>
+
+                        <app-input errorMessage="Campo Obrigatório" label="Torta - ração (Kg)">
+                            <input class="form-control" type="text" placeholder="Torta" name="torta" ngModel required autocomplete="off">
+                        </app-input>
+
+
+                    </div>
+                </div>
+
+                <!-- PRODUCAO ACGUA -->
+                <div class="card row">
+                    <div class="header">
+                        <h3 class="text-on-pannel-acqua text-primary"><strong class="text-uppercase title-acqua"> Produção Diária Acqua </strong></h3>
+                    </div>
+                    <div class="content">
+                        <!-- <app-input errorMessage="Campo Obrigatório" label="Data">
+                            <input class="form-control" type="date" id="dataLancamento" name="dataLancamento" ngModel required>
+                        </app-input> -->
+
+                        <app-input errorMessage="Campo Obrigatório" label="Água de Cocô Sococo">
+                            <input class="form-control" type="number" placeholder="Água de Cocô Sococo" name="aguaDeCocoSococo" ngModel required autocomplete="off">
+                        </app-input>
+
+                        <app-input errorMessage="Campo Obrigatório" label="Água de Cocô Verde">
+                            <input class="form-control" type="number" placeholder="aguaDeCocoVerde" name="aguaDeCocoVerde" ngModel required autocomplete="off">
+                        </app-input>
+
+                        <app-input errorMessage="Campo Obrigatório" label="Porcentagem de Cocô Germinado">
+                            <input class="form-control" type="text" placeholder="Porcentagem de Cocô Germinado" name="porcentagemCocoGerminado" ngModel required autocomplete="off">
+                        </app-input>
+
+                        <app-input errorMessage="Campo Obrigatório" label="Total de Cacambas">
+                            <input class="form-control" type="number" placeholder="Total de Cacambas" name="totalDeCacambas" ngModel required autocomplete="off">
+                        </app-input>
+                    </div>
+                </div>
+
+                <!-- PRODUCAO AMAFIBRA -->
+                <div class="card row">
+                    <div class="header">
+                        <h3 class="text-on-pannel-amafibra text-primary"><strong class="text-uppercase title-amafibra"> Produção Diária Amafibra </strong></h3>
+                    </div>
+                    <div class="content">
+                        <!-- <app-input errorMessage="Campo Obrigatório" label="Data">
+                            <input class="form-control" type="date" id="dataLancamento" name="dataLancamento" ngModel required>
+                        </app-input> -->
+                        <app-input errorMessage="Campo Obrigatório" label="Número de Fardos">
+                            <input class="form-control" type="number" placeholder="Número de Fardos" id="numeroDeFardos" name="numeroDeFardos" ngModel required autocomplete="off">
+                        </app-input>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <!-- <label class="col-lg-2 col-form-label form-control-label"></label> -->
+                    <div class="col-lg-10">
+                        <input type="submit" class="btn btn-primary" value="Salvar" [disabled]="!formulario.valid">
+                        <input type="reset" class="btn btn-secondary" value="Cancelar">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

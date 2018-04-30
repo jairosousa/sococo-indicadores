@@ -17,10 +17,11 @@ export const ROUTES: RouteInfo[] = [
     // { path: 'icons', title: 'Icons', icon: 'ti-pencil-alt2', class: '', submenu: false },
     // { path: 'maps', title: 'Maps', icon: 'ti-map', class: '', submenu: false },
     // { path: 'notifications', title: 'Notifications', icon: 'ti-bell', class: '', submenu: false },
-    { path: 'sococo-lista', title: 'Sococo', icon: 'ti-view-list', class: ''},
-    { path: 'acqua-lista', title: 'Acqua', icon: 'ti-receipt', class: ''},
-    { path: 'amafibra-lista', title: 'Amafibra', icon: 'ti-view-grid', class: ''},
-    { path: 'upgrade', title: 'Upgrade to PRO', icon: 'ti-export', class: 'active-pro'},
+    // { path: 'sococo-lista', title: 'Sococo', icon: 'ti-view-list', class: ''},
+    // { path: 'acqua-lista', title: 'Acqua', icon: 'ti-receipt', class: ''},
+    // { path: 'amafibra-lista', title: 'Amafibra', icon: 'ti-view-grid', class: ''},
+    { path: 'resumo-diario-lista', title: 'Resumo Diário', icon: 'ti-view-list-alt', class: ''},
+    // { path: 'upgrade', title: 'Upgrade to PRO', icon: 'ti-export', class: 'active-pro'},
 ];
 
 @Component({

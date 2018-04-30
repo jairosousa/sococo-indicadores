@@ -23,7 +23,7 @@ export class SococoComponent implements OnInit {
   }
 
   public confirmarCadastro(): void {
-    let sococo: Sococo = new Sococo(
+    const sococo: Sococo = new Sococo(
       this.formulario.value.dataLancamento,
       this.formulario.value.cocosDesfibrados,
       this.formulario.value.cocosProcessados,
@@ -35,7 +35,6 @@ export class SococoComponent implements OnInit {
     )
     this.sococoService.adicionar(sococo)
       .subscribe(response => {
-        
         this.router.navigate(['/sococo-lista']);
       })
   }

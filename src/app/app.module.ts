@@ -23,6 +23,7 @@ import { AppComponent } from './app.component';
 import { AmafibraModule } from './amafibra/amafibra.module';
 import { AcquaModule } from './acqua/acqua.module';
 import { SococoModule } from './sococo/sococo.module';
+import { ResumoDiarioModule } from './resumo-diario/resumo-diario.module';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { SococoModule } from './sococo/sococo.module';
     SococoModule,
     AcquaModule,
     AmafibraModule,
+    ResumoDiarioModule,
     SharedModule
   ],
   providers: [],
