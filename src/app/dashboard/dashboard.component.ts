@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
 // import * as Chartist from '../../../node_modules/chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.js';
 import * as ctPointLabels from 'chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.js';
+import { ResumoDiarioService } from '../resumo-diario/resumo-diario.service';
 
 
 declare var $: any;
@@ -15,7 +16,7 @@ declare var $: any;
 
 export class DashboardComponent implements OnInit {
 
-   data = {
+  data = {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     series: [
       [542, 543, 520, 680, 653, 753, 326, 434, 568, 610, 756, 895],
@@ -41,6 +42,15 @@ export class DashboardComponent implements OnInit {
     ]
   };
 
+
+
+
+  constructor(private resumoDiarioService: ResumoDiarioService) {
+
+  }
+
+
+
   ngOnInit() {
     this.criFlococoChart();
     this.cocoChart();
@@ -49,11 +59,12 @@ export class DashboardComponent implements OnInit {
     this.caixaPadraoChart();
     this.cocoGerminadorChart();
     this.totalDeCacambasChart();
-     this.numeroFardosChart();
+    this.numeroFardosChart();
 
     // this.examplePizza();
     // this.exempleLineHours();
     // this.exempleLinesMonth();
+
   }
 
   exempleLinesMonth() {
@@ -90,10 +101,10 @@ export class DashboardComponent implements OnInit {
       plugins: [
         ctPointLabels({
           textAnchor: 'middle',
-           labelInterpolationFnc: function (value) {
-             return value % 4 === 0 ? + value : '';
-          // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
-           }
+          labelInterpolationFnc: function (value) {
+            return value % 4 === 0 ? + value : '';
+            // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
+          }
         })
       ]
     };
@@ -114,6 +125,45 @@ export class DashboardComponent implements OnInit {
   }
 
   cocoChart() {
+
+    const labels: string[] = [];
+    const series: any[] = [];
+
+    const listaCocoDesfibrado: number[] = [];
+    const listaCocoProcessado: number[] = [];
+    const producaoMesCoco: any[] = [];
+
+    const ano = 2018;
+    this.resumoDiarioService.getCocoPorAno(ano).subscribe(
+      (resp) => {
+
+        console.log(resp._body);
+
+        const lista = JSON.parse(resp._body);
+
+        lista.mesLancamentoCocoWrappers.forEach(mes => {
+          labels.push(mes.mesLancamento);
+        });
+
+        lista.cocoDesfibradoWrappers.forEach(cocoDesfibrado => {
+          listaCocoDesfibrado.push(parseInt(cocoDesfibrado.producaoDiariaCocoDesfibrado));
+        });
+
+        lista.cocoProcessadoWrappers.forEach(cocoProcessado => {
+          listaCocoProcessado.push(parseInt(cocoProcessado.producaoDiariaCocoProcessado));
+        });
+
+        series.push(listaCocoDesfibrado);
+        series.push(listaCocoProcessado);
+
+      }
+    );
+
+    const dataDay2 = {
+      labels: labels,
+      series: series
+    };
+
     const options = {
       seriesDistance: 10,
       showPoint: true,
@@ -124,10 +174,10 @@ export class DashboardComponent implements OnInit {
       plugins: [
         ctPointLabels({
           textAnchor: 'middle',
-           labelInterpolationFnc: function (value) {
-             return value % 4 === 0 ? + value : '';
-          // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
-           }
+          labelInterpolationFnc: function (value) {
+            return value % 4 === 0 ? + value : '';
+            // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
+          }
         })
       ]
     };
@@ -144,7 +194,7 @@ export class DashboardComponent implements OnInit {
       }]
     ];
 
-    new Chartist.Line('#cocoChart', this.dataDay, options, responsiveOptions);
+    new Chartist.Line('#cocoChart', dataDay2, options, responsiveOptions);
   }
 
   oleoChart() {
@@ -159,10 +209,10 @@ export class DashboardComponent implements OnInit {
       plugins: [
         ctPointLabels({
           textAnchor: 'middle',
-           labelInterpolationFnc: function (value) {
-             return value % 4 === 0 ? + value : '';
-          // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
-           }
+          labelInterpolationFnc: function (value) {
+            return value % 4 === 0 ? + value : '';
+            // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
+          }
         })
       ]
     };
@@ -193,10 +243,10 @@ export class DashboardComponent implements OnInit {
       plugins: [
         ctPointLabels({
           textAnchor: 'middle',
-           labelInterpolationFnc: function (value) {
-             return value % 4 === 0 ? + value : '';
-          // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
-           }
+          labelInterpolationFnc: function (value) {
+            return value % 4 === 0 ? + value : '';
+            // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
+          }
         })
       ]
     };
@@ -227,10 +277,10 @@ export class DashboardComponent implements OnInit {
       plugins: [
         ctPointLabels({
           textAnchor: 'middle',
-           labelInterpolationFnc: function (value) {
-             return value % 4 === 0 ? + value : '';
-          // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
-           }
+          labelInterpolationFnc: function (value) {
+            return value % 4 === 0 ? + value : '';
+            // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
+          }
         })
       ]
     };
@@ -261,10 +311,10 @@ export class DashboardComponent implements OnInit {
       plugins: [
         ctPointLabels({
           textAnchor: 'middle',
-           labelInterpolationFnc: function (value) {
-             return value % 4 === 0 ? + value : '';
-          // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
-           }
+          labelInterpolationFnc: function (value) {
+            return value % 4 === 0 ? + value : '';
+            // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
+          }
         })
       ]
     };
@@ -295,10 +345,10 @@ export class DashboardComponent implements OnInit {
       plugins: [
         ctPointLabels({
           textAnchor: 'middle',
-           labelInterpolationFnc: function (value) {
-             return value % 4 === 0 ? + value : '';
-          // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
-           }
+          labelInterpolationFnc: function (value) {
+            return value % 4 === 0 ? + value : '';
+            // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
+          }
         })
       ]
     };
@@ -329,10 +379,10 @@ export class DashboardComponent implements OnInit {
       plugins: [
         ctPointLabels({
           textAnchor: 'middle',
-           labelInterpolationFnc: function (value) {
-             return value % 4 === 0 ? + value : '';
-          // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
-           }
+          labelInterpolationFnc: function (value) {
+            return value % 4 === 0 ? + value : '';
+            // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
+          }
         })
       ]
     };

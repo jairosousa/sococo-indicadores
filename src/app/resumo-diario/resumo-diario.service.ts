@@ -38,4 +38,11 @@ export class ResumoDiarioService {
             .catch(ErrorHandler.handlerError);
     }
 
+    public getCocoPorAno(ano: number): Observable<any> {
+        return this.http.get(`${environment.base_url}/dashboard/resumo-diario-cocos/${ano}`)
+            .map((response: Response) => {
+                return response;
+            })
+            .catch(ErrorHandler.handlerError);
+    }
 }
