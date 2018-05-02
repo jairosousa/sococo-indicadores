@@ -45,4 +45,12 @@ export class ResumoDiarioService {
             })
             .catch(ErrorHandler.handlerError);
     }
+
+    public getCriFlococoPorAno(ano: number): Observable<any> {
+        return this.http.get(`${environment.base_url}/dashboard/resumo-diario-cri-flococo/${ano}`)
+            .map((response: Response) => {
+                return response;
+            })
+            .catch(ErrorHandler.handlerError);
+    }
 }

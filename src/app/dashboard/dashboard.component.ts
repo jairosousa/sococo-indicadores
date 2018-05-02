@@ -52,8 +52,8 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit() {
-    this.criFlococoChart();
-    this.cocoChart();
+    //this.criFlococoChart();
+    //this.cocoChart();
     this.oleoChart();
     this.cocoSococoCocoVerdeChart();
     this.caixaPadraoChart();
@@ -90,112 +90,9 @@ export class DashboardComponent implements OnInit {
     new Chartist.Line('#chartActivity', this.data, options, responsiveOptions);
   }
 
-  criFlococoChart() {
-    const options = {
-      seriesDistance: 10,
-      showPoint: true,
-      axisX: {
-        showGrid: false
-      },
-      height: '245px',
-      plugins: [
-        ctPointLabels({
-          textAnchor: 'middle',
-          labelInterpolationFnc: function (value) {
-            return value % 4 === 0 ? + value : '';
-            // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
-          }
-        })
-      ]
-    };
 
-    const responsiveOptions: any[] = [
-      ['screen and (max-width: 640px)', {
-        seriesDistance: 5,
-        axisX: {
-          labelInterpolationFnc: function (value, index) {
-            return index % 4 === 0 ? + value : null;
-            // return value[0];
-          }
-        }
-      }]
-    ];
 
-    new Chartist.Line('#CRIFlococoChart', this.dataDay, options, responsiveOptions);
-  }
-
-  cocoChart() {
-
-    const labels: string[] = [];
-    const series: any[] = [];
-
-    const listaCocoDesfibrado: number[] = [];
-    const listaCocoProcessado: number[] = [];
-    const producaoMesCoco: any[] = [];
-
-    const ano = 2018;
-    this.resumoDiarioService.getCocoPorAno(ano).subscribe(
-      (resp) => {
-
-        console.log(resp._body);
-
-        const lista = JSON.parse(resp._body);
-
-        lista.mesLancamentoCocoWrappers.forEach(mes => {
-          labels.push(mes.mesLancamento);
-        });
-
-        lista.cocoDesfibradoWrappers.forEach(cocoDesfibrado => {
-          listaCocoDesfibrado.push(parseInt(cocoDesfibrado.producaoDiariaCocoDesfibrado));
-        });
-
-        lista.cocoProcessadoWrappers.forEach(cocoProcessado => {
-          listaCocoProcessado.push(parseInt(cocoProcessado.producaoDiariaCocoProcessado));
-        });
-
-        series.push(listaCocoDesfibrado);
-        series.push(listaCocoProcessado);
-
-      }
-    );
-
-    const dataDay2 = {
-      labels: labels,
-      series: series
-    };
-
-    const options = {
-      seriesDistance: 10,
-      showPoint: true,
-      axisX: {
-        showGrid: false
-      },
-      height: '245px',
-      plugins: [
-        ctPointLabels({
-          textAnchor: 'middle',
-          labelInterpolationFnc: function (value) {
-            return value % 4 === 0 ? + value : '';
-            // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
-          }
-        })
-      ]
-    };
-
-    const responsiveOptions: any[] = [
-      ['screen and (max-width: 640px)', {
-        seriesDistance: 5,
-        axisX: {
-          labelInterpolationFnc: function (value, index) {
-            return index % 4 === 0 ? + value : null;
-            // return value[0];
-          }
-        }
-      }]
-    ];
-
-    new Chartist.Line('#cocoChart', dataDay2, options, responsiveOptions);
-  }
+  
 
   oleoChart() {
 
