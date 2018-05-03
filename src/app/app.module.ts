@@ -26,6 +26,7 @@ import { SococoModule } from './sococo/sococo.module';
 import { ResumoDiarioModule } from './resumo-diario/resumo-diario.module';
 import { AguaCocoComponent } from './dashboard/agua-coco/agua-coco.component';
 import { CriFlococoComponent } from './dashboard/cri-flococo/cri-flococo.component';
+import { CocosComponent } from './dashboard/cocos/coco.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { CriFlococoComponent } from './dashboard/cri-flococo/cri-flococo.compone
     NotificationsComponent,
     UpgradeComponent,
     CriFlococoComponent,
+    CocosComponent
   ],
   imports: [
     BrowserModule,

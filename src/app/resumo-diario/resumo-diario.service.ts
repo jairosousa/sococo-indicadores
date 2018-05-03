@@ -53,4 +53,12 @@ export class ResumoDiarioService {
             })
             .catch(ErrorHandler.handlerError);
     }
+
+    public getCocoSococoCocoVerde(ano: number): Observable<any> {
+        return this.http.get(`${environment.base_url}/dashboard/resumo-diario-agua-coco/${ano}`)
+            .map((response: Response) => {
+                return response;
+            })
+            .catch(ErrorHandler.handlerError);
+    }
 }

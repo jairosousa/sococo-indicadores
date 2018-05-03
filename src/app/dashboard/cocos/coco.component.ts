@@ -4,31 +4,30 @@ import * as Chartist from 'chartist';
 import * as ctPointLabels from 'chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.js';
 
 @Component({
-    selector: 'agua-coco',
-    templateUrl: 'agua-coco.component.html'
+    selector: 'coco',
+    templateUrl: 'coco.component.html'
 })
 
-export class AguaCocoComponent implements OnInit {
+export class CocosComponent implements OnInit {
 
     constructor(
         private resumoDiarioService: ResumoDiarioService
     ) { }
 
     ngOnInit() {
-        this.cocoSococoCocoVerdeChart()
+        this.cocoChart()
     }
-
-    public cocoSococoCocoVerdeChart() {
+    cocoChart() {
 
         const labels: string[] = [];
         const series: any[] = [];
 
-        const listaCocoSococo: number[] = [];
-        const listaCocoverde: number[] = [];
+        const listaCocoDesfibrado: number[] = [];
+        const listaCocoProcessado: number[] = [];
         const producaoMesCoco: any[] = [];
 
         const ano = 2018;
-        this.resumoDiarioService.getCocoSococoCocoVerde(ano).subscribe(
+        this.resumoDiarioService.getCocoPorAno(ano).subscribe(
             (resp) => {
                 console.log(resp);
 
@@ -40,25 +39,24 @@ export class AguaCocoComponent implements OnInit {
                     labels.push(mes.mesLancamento);
                 });
 
-                lista.aguaCocoSococoWrappers.forEach(cocosococo => {
-                    console.log(cocosococo);
+                lista.cocoDesfibradoWrappers.forEach(cocoDesfibrado => {
+                    console.log(cocoDesfibrado);
                     
-                    listaCocoSococo.push(parseInt(cocosococo.producaoDiariaAguaCocoSococo));
+                    listaCocoDesfibrado.push(parseInt(cocoDesfibrado.producaoDiariaCocoDesfibrado));
                 });
 
-                lista.aguaCocoVerdeWrappers.forEach(cocoverde => {
-                    console.log(cocoverde);
-                    
-                    listaCocoverde.push(parseInt(cocoverde.producaoDiariaAguaCocoVerde));
+                lista.cocoProcessadoWrappers.forEach(cocoProcessado => {
+                    console.log(cocoProcessado);
+                    listaCocoProcessado.push(parseInt(cocoProcessado.producaoDiariaCocoProcessado));
                 });
 
-                series.push(listaCocoSococo);
-                series.push(listaCocoverde);
+                series.push(listaCocoDesfibrado);
+                series.push(listaCocoProcessado);
 
             }
         );
 
-        const dataDay = {
+        const dataDay2 = {
             labels: labels,
             series: series
         };
@@ -93,7 +91,7 @@ export class AguaCocoComponent implements OnInit {
             }]
         ];
 
-        new Chartist.Line('#cocoSococoCocoVerdeChart', dataDay, options, responsiveOptions);
+        new Chartist.Line('#cocoChart', dataDay2, options, responsiveOptions);
     }
 
 }
