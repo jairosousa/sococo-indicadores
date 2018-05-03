@@ -4,7 +4,7 @@ import * as Chartist from 'chartist';
 import * as ctPointLabels from 'chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.js';
 
 @Component({
-  selector: 'cri-flococo',
+  selector: 'chart-cri-flococo',
   templateUrl: './cri-flococo.component.html',
   styleUrls: ['./cri-flococo.component.css']
 })
@@ -31,9 +31,6 @@ export class CriFlococoComponent implements OnInit {
 
     this.resumoDiarioService.getCriFlococoPorAno(ano).subscribe(
       (resp) => {
-        console.log(resp);
-
-        console.log(resp._body);
 
         const lista = JSON.parse(resp._body);
 
@@ -42,13 +39,10 @@ export class CriFlococoComponent implements OnInit {
         });
 
         lista.criWrappers.forEach(cri => {
-          console.log(cri);
-
           listaCri.push(parseInt(cri.producaoDiariaCRI));
         });
 
         lista.flococoWrappers.forEach(flococo => {
-          console.log(flococo);
           listaFlococo.push(parseInt(flococo.producaoDiariaFlococo));
         });
 
@@ -58,7 +52,7 @@ export class CriFlococoComponent implements OnInit {
       }
     );
 
-    const dataDay = {
+    const dataMonth = {
       labels: labels,
       series: series
     };
@@ -94,7 +88,7 @@ export class CriFlococoComponent implements OnInit {
     ];
   
 
-    new Chartist.Line('#CRIFlococoChart', dataDay, options, responsiveOptions);
+    new Chartist.Line('#CRIFlococoChart', dataMonth, options, responsiveOptions);
   }
 
 }

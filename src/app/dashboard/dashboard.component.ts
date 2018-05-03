@@ -52,9 +52,9 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit() {
-    //this.criFlococoChart();
-    //this.cocoChart();
-    this.oleoChart();
+    // this.criFlococoChart();
+    // this.cocoChart();
+    // this.oleoChart();
     this.cocoSococoCocoVerdeChart();
     this.caixaPadraoChart();
     this.cocoGerminadorChart();
@@ -91,43 +91,6 @@ export class DashboardComponent implements OnInit {
   }
 
 
-
-  
-
-  oleoChart() {
-
-    const oleoOption = {
-      seriesDistance: 10,
-      showPoint: true,
-      axisX: {
-        showGrid: false
-      },
-      height: '245px',
-      plugins: [
-        ctPointLabels({
-          textAnchor: 'middle',
-          labelInterpolationFnc: function (value) {
-            return value % 4 === 0 ? + value : '';
-            // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
-          }
-        })
-      ]
-    };
-
-    const responsiveOption: any[] = [
-      ['screen and (max-width: 640px)', {
-        seriesDistance: 5,
-        axisX: {
-          labelInterpolationFnc: function (value) {
-            return value[0];
-          }
-        }
-      }]
-    ];
-
-    new Chartist.Line('#oleoChart', this.dataDay, oleoOption, responsiveOption);
-
-  }
 
   cocoSococoCocoVerdeChart() {
     const oleoOption = {

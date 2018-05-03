@@ -4,34 +4,32 @@ import * as Chartist from 'chartist';
 import * as ctPointLabels from 'chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.js';
 
 @Component({
-    selector: 'agua-coco',
-    templateUrl: 'agua-coco.component.html'
+    selector: 'chart-oleo',
+    templateUrl: 'oleo.component.html'
 })
 
-export class AguaCocoComponent implements OnInit {
+export class OleoComponent implements OnInit {
 
     constructor(
         private resumoDiarioService: ResumoDiarioService
     ) { }
 
     ngOnInit() {
-        this.cocoChart()
+        this.oleoChart();
     }
-    cocoChart() {
+
+    oleoChart() {
 
         const labels: string[] = [];
         const series: any[] = [];
 
-        const listaCocoDesfibrado: number[] = [];
-        const listaCocoProcessado: number[] = [];
-        const producaoMesCoco: any[] = [];
+        const listaOleoIndustrialETE: number[] = [];
+        const listaOleoIndustrialTipoA: number[] = [];
+       // const producaoMes: any[] = [];
 
         const ano = 2018;
-        this.resumoDiarioService.getCocoPorAno(ano).subscribe(
+        this.resumoDiarioService.getOleoPorAno(ano).subscribe(
             (resp) => {
-                console.log(resp);
-
-                console.log(resp._body);
 
                 const lista = JSON.parse(resp._body);
 
@@ -39,24 +37,21 @@ export class AguaCocoComponent implements OnInit {
                     labels.push(mes.mesLancamento);
                 });
 
-                lista.cocoDesfibradoWrappers.forEach(cocoDesfibrado => {
-                    console.log(cocoDesfibrado);
-                    
-                    listaCocoDesfibrado.push(parseInt(cocoDesfibrado.producaoDiariaCocoDesfibrado));
+                lista.oleoIndustrialETEWrappers.forEach(oleoETE => {
+                    listaOleoIndustrialETE.push(parseInt(oleoETE.producaoDiariaOleoIndustrialETE));
                 });
 
-                lista.cocoProcessadoWrappers.forEach(cocoProcessado => {
-                    console.log(cocoProcessado);
-                    listaCocoProcessado.push(parseInt(cocoProcessado.producaoDiariaCocoProcessado));
+                lista.oleoIndustrialTipoAWrapper.forEach(oleoTipoA => {
+                      listaOleoIndustrialTipoA.push(parseInt(oleoTipoA.producaoDiariaOleoIndustrialTipoA));
                 });
 
-                series.push(listaCocoDesfibrado);
-                series.push(listaCocoProcessado);
+                series.push(listaOleoIndustrialETE);
+                series.push(listaOleoIndustrialTipoA);
 
             }
         );
 
-        const dataDay2 = {
+        const dataMonth = {
             labels: labels,
             series: series
         };
@@ -91,7 +86,8 @@ export class AguaCocoComponent implements OnInit {
             }]
         ];
 
-        new Chartist.Line('#cocoChart', dataDay2, options, responsiveOptions);
+        new Chartist.Line('#oleoChart', dataMonth, options, responsiveOptions);
     }
+
 
 }
