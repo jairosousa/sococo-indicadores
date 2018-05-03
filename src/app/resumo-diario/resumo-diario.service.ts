@@ -39,7 +39,7 @@ export class ResumoDiarioService {
     }
 
     public getCocoPorAno(ano: number): Observable<any> {
-        return this.http.get(`${environment.base_url}/dashboard/resumo-diario-cocos/${ano}`)
+        return this.http.get(`${environment.base_url}/dashboard/resumo-diario-coco/${ano}`)
             .map((response: Response) => {
                 return response;
             })
@@ -55,7 +55,24 @@ export class ResumoDiarioService {
     }
 
     public getOleoPorAno(ano: number): Observable<any> {
-        return this.http.get(`${environment.base_url}/dashboard/resumo-diario-oleos/${ano}`)
+        return this.http.get(`${environment.base_url}/dashboard/resumo-diario-oleo/${ano}`)
+            .map((response: Response) => {
+                return response;
+            })
+            .catch(ErrorHandler.handlerError);
+    }
+
+    public getAguaCocoPorAno(ano: number): Observable<any> {
+        return this.http.get(`${environment.base_url}/dashboard/resumo-diario-agua-coco/${ano}`)
+            .map((response: Response) => {
+                return response;
+            })
+            .catch(ErrorHandler.handlerError);
+    }
+
+
+    public getFardoPorAno(ano: number): Observable<any> {
+        return this.http.get(`${environment.base_url}/dashboard/resumo-diario-fardo/${ano}`)
             .map((response: Response) => {
                 return response;
             })

@@ -4,7 +4,7 @@ import * as Chartist from 'chartist';
 import * as ctPointLabels from 'chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.js';
 
 @Component({
-  selector: 'chart-cri-flococo',
+  selector: 'app-chart-cri-flococo',
   templateUrl: './cri-flococo.component.html',
   styleUrls: ['./cri-flococo.component.css']
 })
@@ -25,7 +25,7 @@ export class CriFlococoComponent implements OnInit {
 
     const listaCri: number[] = [];
     const listaFlococo: number[] = [];
-    const producaoMesCoco: any[] = [];
+    // const producaoMesCoco: any[] = [];
 
     const ano = 2018;
 

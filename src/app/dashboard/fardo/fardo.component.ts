@@ -4,31 +4,30 @@ import * as Chartist from 'chartist';
 import * as ctPointLabels from 'chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.js';
 
 @Component({
-    selector: 'app-chart-oleo',
-    templateUrl: 'oleo.component.html'
+    selector: 'app-chart-fardo',
+    templateUrl: 'fardo.component.html'
 })
 
-export class OleoComponent implements OnInit {
+export class FardoComponent implements OnInit {
 
     constructor(
         private resumoDiarioService: ResumoDiarioService
     ) { }
 
     ngOnInit() {
-        this.oleoChart();
+        this.fardoChart();
     }
 
-    oleoChart() {
+    fardoChart() {
 
         const labels: string[] = [];
         const series: any[] = [];
 
-        const listaOleoIndustrialETE: number[] = [];
-        const listaOleoIndustrialTipoA: number[] = [];
-       // const producaoMes: any[] = [];
+        const listaFardos: number[] = [];
+        // const producaoMes: any[] = [];
 
         const ano = 2018;
-        this.resumoDiarioService.getOleoPorAno(ano).subscribe(
+        this.resumoDiarioService.getFardoPorAno(ano).subscribe(
             (resp) => {
 
                 const lista = JSON.parse(resp._body);
@@ -37,16 +36,11 @@ export class OleoComponent implements OnInit {
                     labels.push(mes.mesLancamento);
                 });
 
-                lista.oleoIndustrialETEWrappers.forEach(oleoETE => {
-                    listaOleoIndustrialETE.push(parseInt(oleoETE.producaoDiariaOleoIndustrialETE));
+                lista.totalFardosWrapper.forEach(fardos => {
+                    listaFardos.push(parseInt(fardos.producaoDiariaTotalFardos));
                 });
 
-                lista.oleoIndustrialTipoAWrapper.forEach(oleoTipoA => {
-                      listaOleoIndustrialTipoA.push(parseInt(oleoTipoA.producaoDiariaOleoIndustrialTipoA));
-                });
-
-                series.push(listaOleoIndustrialETE);
-                series.push(listaOleoIndustrialTipoA);
+                series.push(listaFardos);
 
             }
         );
@@ -86,8 +80,7 @@ export class OleoComponent implements OnInit {
             }]
         ];
 
-        new Chartist.Line('#oleoChart', dataMonth, options, responsiveOptions);
+        new Chartist.Line('#numeroFardosChart', dataMonth, options, responsiveOptions);
     }
-
 
 }

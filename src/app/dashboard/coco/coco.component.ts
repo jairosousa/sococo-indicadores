@@ -4,7 +4,7 @@ import * as Chartist from 'chartist';
 import * as ctPointLabels from 'chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.js';
 
 @Component({
-    selector: 'chart-coco',
+    selector: 'app-chart-coco',
     templateUrl: 'coco.component.html'
 })
 
@@ -25,7 +25,7 @@ export class CocoComponent implements OnInit {
 
         const listaCocoDesfibrado: number[] = [];
         const listaCocoProcessado: number[] = [];
-        const producaoMesCoco: any[] = [];
+        // const producaoMes: any[] = [];
 
         const ano = 2018;
         this.resumoDiarioService.getCocoPorAno(ano).subscribe(

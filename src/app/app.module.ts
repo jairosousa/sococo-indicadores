@@ -27,6 +27,8 @@ import { ResumoDiarioModule } from './resumo-diario/resumo-diario.module';
 import { CocoComponent } from './dashboard/coco/coco.component';
 import { CriFlococoComponent } from './dashboard/cri-flococo/cri-flococo.component';
 import { OleoComponent } from './dashboard/oleo/oleo.component';
+import { AguaCocoComponent } from './dashboard/agua-coco/agua-coco.component';
+import { FardoComponent } from './dashboard/fardo/fardo.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { OleoComponent } from './dashboard/oleo/oleo.component';
     NotificationsComponent,
     UpgradeComponent,
     CriFlococoComponent,
-    OleoComponent
+    OleoComponent,
+    AguaCocoComponent,
+    FardoComponent
   ],
   imports: [
     BrowserModule,
