@@ -76,9 +76,9 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
-    
+
 
     <div class="header-sococo">
         <span>SOCOCO</span>
@@ -86,184 +86,125 @@
     <div class="line-separator"></div>
 
     <div class="row">
-        
-        <cri-flococo></cri-flococo>
 
-        <coco></coco>
-        
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card ">
-                <div class="header">
-                    <h4 class="title">Produção Diária de Óleo Insdustrial (L)</h4>
-                    <p class="category">Abril de 2018</p>
-                </div>
-                <div class="content">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="btn-group" role="group" aria-label="...">
-                                <button type="button" class="btn btn-default">ANO</button>
-                                <button type="button" class="btn btn-default">MÊS</button>
-                                <button type="button" class="btn btn-default">DIA</button>
+        <app-chart-cri-flococo></app-chart-cri-flococo>
+
+        <app-chart-coco></app-chart-coco>
+
+        <app-chart-oleo></app-chart-oleo>
+
+
+        <div class="header-acqua">
+            <span>ACQUA</span>
+        </div>
+        <div class="line-separator"></div>
+
+        <div class="row">
+            <app-chart-agua-coco></app-chart-agua-coco>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card ">
+                    <div class="header">
+                        <h4 class="title">Produção Diária de Caixa Padrão (Und). </h4>
+                        <p class="category">Abril de 2018</p>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-default">ANO</button>
+                                    <button type="button" class="btn btn-default">MÊS</button>
+                                    <button type="button" class="btn btn-default">DIA</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="caixaPadraoChart" class="ct-chart"></div>
+                        <div class="footer">
+                            <div class="chart-legend">
+                                <i class="fa fa-circle text-info"></i> Caixa Padrão
+                                <i class="fa fa-circle text-warning"></i> ---
+                            </div>
+                            <hr>
+                            <div class="stats">
+                                <i class="ti-check"></i> 22/04/2018
                             </div>
                         </div>
                     </div>
-                    <div id="oleoChart" class="ct-chart"></div>
-
-                    <div class="footer">
-                        <div class="chart-legend">
-                            <i class="fa fa-circle text-info"></i> Óleo Insdustrial Tipo A
-                            <i class="fa fa-circle text-warning"></i> Óleo Insdustrial E.T.E
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card ">
+                    <div class="header">
+                        <h4 class="title">Produção Diária de Coco Germinado (%). </h4>
+                        <p class="category">Abril de 2018</p>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-default">ANO</button>
+                                    <button type="button" class="btn btn-default">MÊS</button>
+                                    <button type="button" class="btn btn-default">DIA</button>
+                                </div>
+                            </div>
                         </div>
-                        <hr>
-                        <div class="stats">
-                            <i class="ti-check"></i> 22/04/2018
+                        <div id="cocoGerminadorChart" class="ct-chart"></div>
+                        <div class="footer">
+                            <div class="chart-legend">
+                                <i class="fa fa-circle text-info"></i> Coco Germinado
+                                <i class="fa fa-circle text-warning"></i> ---
+                            </div>
+                            <hr>
+                            <div class="stats">
+                                <i class="ti-check"></i> 22/04/2018
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card ">
+                    <div class="header">
+                        <h4 class="title">Total de Caçambas. </h4>
+                        <p class="category">Abril de 2018</p>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-default">ANO</button>
+                                    <button type="button" class="btn btn-default">MÊS</button>
+                                    <button type="button" class="btn btn-default">DIA</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="totalDeCacambasChart" class="ct-chart"></div>
+                        <div class="footer">
+                            <div class="chart-legend">
+                                <i class="fa fa-circle text-info"></i> Total de Caçambas
+                                <i class="fa fa-circle text-warning"></i> ---
+                            </div>
+                            <hr>
+                            <div class="stats">
+                                <i class="ti-check"></i> 22/04/2018
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="header-acqua">
-        <span>ACQUA</span>
-    </div>
-    <div class="line-separator"></div>
-
-    <div class="row">
-        <agua-coco></agua-coco>
-    </div>
-
-
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card ">
-                <div class="header">
-                    <h4 class="title">Produção Diária de Caixa Padrão (Und). </h4>
-                    <p class="category">Abril de 2018</p>
-                </div>
-                <div class="content">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="btn-group" role="group" aria-label="...">
-                                <button type="button" class="btn btn-default">ANO</button>
-                                <button type="button" class="btn btn-default">MÊS</button>
-                                <button type="button" class="btn btn-default">DIA</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="caixaPadraoChart" class="ct-chart"></div>
-                    <div class="footer">
-                        <div class="chart-legend">
-                            <i class="fa fa-circle text-info"></i> Caixa Padrão
-                            <i class="fa fa-circle text-warning"></i> ---
-                        </div>
-                        <hr>
-                        <div class="stats">
-                            <i class="ti-check"></i> 22/04/2018
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="header-amafibra">
+            <span>AMAFIBRA</span>
         </div>
-        <div class="col-md-4">
-            <div class="card ">
-                <div class="header">
-                    <h4 class="title">Produção Diária de Coco Germinado (%). </h4>
-                    <p class="category">Abril de 2018</p>
-                </div>
-                <div class="content">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="btn-group" role="group" aria-label="...">
-                                <button type="button" class="btn btn-default">ANO</button>
-                                <button type="button" class="btn btn-default">MÊS</button>
-                                <button type="button" class="btn btn-default">DIA</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="cocoGerminadorChart" class="ct-chart"></div>
-                    <div class="footer">
-                        <div class="chart-legend">
-                            <i class="fa fa-circle text-info"></i> Coco Germinado
-                            <i class="fa fa-circle text-warning"></i> ---
-                        </div>
-                        <hr>
-                        <div class="stats">
-                            <i class="ti-check"></i> 22/04/2018
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card ">
-                <div class="header">
-                    <h4 class="title">Total de Caçambas. </h4>
-                    <p class="category">Abril de 2018</p>
-                </div>
-                <div class="content">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="btn-group" role="group" aria-label="...">
-                                <button type="button" class="btn btn-default">ANO</button>
-                                <button type="button" class="btn btn-default">MÊS</button>
-                                <button type="button" class="btn btn-default">DIA</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="totalDeCacambasChart" class="ct-chart"></div>
-                    <div class="footer">
-                        <div class="chart-legend">
-                            <i class="fa fa-circle text-info"></i> Total de Caçambas
-                            <i class="fa fa-circle text-warning"></i> ---
-                        </div>
-                        <hr>
-                        <div class="stats">
-                            <i class="ti-check"></i> 22/04/2018
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="line-separator"></div>
+
+        <div class="row">
+            <app-chart-fardo></app-chart-fardo>
         </div>
     </div>
-
-    <div class="header-amafibra">
-        <span>AMAFIBRA</span>
-    </div>
-    <div class="line-separator"></div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card ">
-                <div class="header">
-                    <h4 class="title">Produção Diária de Número de Fardos</h4>
-                    <p class="category">Abril de 2018</p>
-                </div>
-                <div class="content">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="btn-group" role="group" aria-label="...">
-                                <button type="button" class="btn btn-default">ANO</button>
-                                <button type="button" class="btn btn-default">MÊS</button>
-                                <button type="button" class="btn btn-default">DIA</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="numeroFardosChart" class="ct-chart"></div>
-
-                    <div class="footer">
-                        <div class="chart-legend">
-                            <i class="fa fa-circle text-info"></i> Número de Fardos
-                            <i class="fa fa-circle text-warning"></i> ------
-                        </div>
-                        <hr>
-                        <div class="stats">
-                            <i class="ti-check"></i> 22/04/2018
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

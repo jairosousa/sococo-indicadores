@@ -4,31 +4,31 @@ import * as Chartist from 'chartist';
 import * as ctPointLabels from 'chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.js';
 
 @Component({
-    selector: 'app-chart-agua-coco',
-    templateUrl: 'agua-coco.component.html'
+    selector: 'app-chart-coco',
+    templateUrl: 'coco.component.html'
 })
 
-export class AguaCocoComponent implements OnInit {
+export class CocoComponent implements OnInit {
 
     constructor(
         private resumoDiarioService: ResumoDiarioService
     ) { }
 
     ngOnInit() {
-        this.aguaCocoChart();
+        this.cocoChart();
     }
 
-    aguaCocoChart() {
+    cocoChart() {
 
         const labels: string[] = [];
         const series: any[] = [];
 
-        const listaAguaCocoSococo: number[] = [];
-        const listaAguaCocoVerde: number[] = [];
+        const listaCocoDesfibrado: number[] = [];
+        const listaCocoProcessado: number[] = [];
         // const producaoMes: any[] = [];
 
         const ano = 2018;
-        this.resumoDiarioService.getAguaCocoPorAno(ano).subscribe(
+        this.resumoDiarioService.getCocoPorAno(ano).subscribe(
             (resp) => {
 
                 const lista = JSON.parse(resp._body);
@@ -37,16 +37,16 @@ export class AguaCocoComponent implements OnInit {
                     labels.push(mes.mesLancamento);
                 });
 
-                lista.aguaCocoSococoWrappers.forEach(aguaSococo => {
-                    listaAguaCocoSococo.push(parseInt(aguaSococo.producaoDiariaAguaCocoSococo));
+                lista.cocoDesfibradoWrappers.forEach(cocoDesfibrado => {
+                    listaCocoDesfibrado.push(parseInt(cocoDesfibrado.producaoDiariaCocoDesfibrado));
                 });
 
-                lista.aguaCocoVerdeWrappers.forEach(aguaCocoVerde => {
-                    listaAguaCocoVerde.push(parseInt(aguaCocoVerde.producaoDiariaAguaCocoVerde));
+                lista.cocoProcessadoWrappers.forEach(cocoProcessado => {
+                    listaCocoProcessado.push(parseInt(cocoProcessado.producaoDiariaCocoProcessado));
                 });
 
-                series.push(listaAguaCocoSococo);
-                series.push(listaAguaCocoVerde);
+                series.push(listaCocoDesfibrado);
+                series.push(listaCocoProcessado);
 
             }
         );
@@ -86,7 +86,7 @@ export class AguaCocoComponent implements OnInit {
             }]
         ];
 
-        new Chartist.Line('#aguaCocoChart', dataMonth, options, responsiveOptions);
+        new Chartist.Line('#cocoChart', dataMonth, options, responsiveOptions);
     }
 
 }

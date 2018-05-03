@@ -4,31 +4,31 @@ import * as Chartist from 'chartist';
 import * as ctPointLabels from 'chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.js';
 
 @Component({
-    selector: 'app-chart-agua-coco',
-    templateUrl: 'agua-coco.component.html'
+    selector: 'app-chart-oleo',
+    templateUrl: 'oleo.component.html'
 })
 
-export class AguaCocoComponent implements OnInit {
+export class OleoComponent implements OnInit {
 
     constructor(
         private resumoDiarioService: ResumoDiarioService
     ) { }
 
     ngOnInit() {
-        this.aguaCocoChart();
+        this.oleoChart();
     }
 
-    aguaCocoChart() {
+    oleoChart() {
 
         const labels: string[] = [];
         const series: any[] = [];
 
-        const listaAguaCocoSococo: number[] = [];
-        const listaAguaCocoVerde: number[] = [];
-        // const producaoMes: any[] = [];
+        const listaOleoIndustrialETE: number[] = [];
+        const listaOleoIndustrialTipoA: number[] = [];
+       // const producaoMes: any[] = [];
 
         const ano = 2018;
-        this.resumoDiarioService.getAguaCocoPorAno(ano).subscribe(
+        this.resumoDiarioService.getOleoPorAno(ano).subscribe(
             (resp) => {
 
                 const lista = JSON.parse(resp._body);
@@ -37,16 +37,16 @@ export class AguaCocoComponent implements OnInit {
                     labels.push(mes.mesLancamento);
                 });
 
-                lista.aguaCocoSococoWrappers.forEach(aguaSococo => {
-                    listaAguaCocoSococo.push(parseInt(aguaSococo.producaoDiariaAguaCocoSococo));
+                lista.oleoIndustrialETEWrappers.forEach(oleoETE => {
+                    listaOleoIndustrialETE.push(parseInt(oleoETE.producaoDiariaOleoIndustrialETE));
                 });
 
-                lista.aguaCocoVerdeWrappers.forEach(aguaCocoVerde => {
-                    listaAguaCocoVerde.push(parseInt(aguaCocoVerde.producaoDiariaAguaCocoVerde));
+                lista.oleoIndustrialTipoAWrapper.forEach(oleoTipoA => {
+                      listaOleoIndustrialTipoA.push(parseInt(oleoTipoA.producaoDiariaOleoIndustrialTipoA));
                 });
 
-                series.push(listaAguaCocoSococo);
-                series.push(listaAguaCocoVerde);
+                series.push(listaOleoIndustrialETE);
+                series.push(listaOleoIndustrialTipoA);
 
             }
         );
@@ -86,7 +86,8 @@ export class AguaCocoComponent implements OnInit {
             }]
         ];
 
-        new Chartist.Line('#aguaCocoChart', dataMonth, options, responsiveOptions);
+        new Chartist.Line('#oleoChart', dataMonth, options, responsiveOptions);
     }
+
 
 }

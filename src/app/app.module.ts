@@ -24,16 +24,18 @@ import { AmafibraModule } from './amafibra/amafibra.module';
 import { AcquaModule } from './acqua/acqua.module';
 import { SococoModule } from './sococo/sococo.module';
 import { ResumoDiarioModule } from './resumo-diario/resumo-diario.module';
-import { AguaCocoComponent } from './dashboard/agua-coco/agua-coco.component';
+import { CocoComponent } from './dashboard/coco/coco.component';
 import { CriFlococoComponent } from './dashboard/cri-flococo/cri-flococo.component';
-import { CocosComponent } from './dashboard/cocos/coco.component';
+import { OleoComponent } from './dashboard/oleo/oleo.component';
+import { AguaCocoComponent } from './dashboard/agua-coco/agua-coco.component';
+import { FardoComponent } from './dashboard/fardo/fardo.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    AguaCocoComponent,
+    CocoComponent,
     UserComponent,
     TableComponent,
     TypographyComponent,
@@ -42,7 +44,9 @@ import { CocosComponent } from './dashboard/cocos/coco.component';
     NotificationsComponent,
     UpgradeComponent,
     CriFlococoComponent,
-    CocosComponent
+    OleoComponent,
+    AguaCocoComponent,
+    FardoComponent
   ],
   imports: [
     BrowserModule,

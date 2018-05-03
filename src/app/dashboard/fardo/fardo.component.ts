@@ -4,34 +4,31 @@ import * as Chartist from 'chartist';
 import * as ctPointLabels from 'chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.js';
 
 @Component({
-    selector: 'coco',
-    templateUrl: 'coco.component.html'
+    selector: 'app-chart-fardo',
+    templateUrl: 'fardo.component.html'
 })
 
-export class CocosComponent implements OnInit {
+export class FardoComponent implements OnInit {
 
     constructor(
         private resumoDiarioService: ResumoDiarioService
     ) { }
 
     ngOnInit() {
-        this.cocoChart()
+        this.fardoChart();
     }
-    cocoChart() {
+
+    fardoChart() {
 
         const labels: string[] = [];
         const series: any[] = [];
 
-        const listaCocoDesfibrado: number[] = [];
-        const listaCocoProcessado: number[] = [];
-        const producaoMesCoco: any[] = [];
+        const listaFardos: number[] = [];
+        // const producaoMes: any[] = [];
 
         const ano = 2018;
-        this.resumoDiarioService.getCocoPorAno(ano).subscribe(
+        this.resumoDiarioService.getFardoPorAno(ano).subscribe(
             (resp) => {
-                console.log(resp);
-
-                console.log(resp._body);
 
                 const lista = JSON.parse(resp._body);
 
@@ -39,24 +36,16 @@ export class CocosComponent implements OnInit {
                     labels.push(mes.mesLancamento);
                 });
 
-                lista.cocoDesfibradoWrappers.forEach(cocoDesfibrado => {
-                    console.log(cocoDesfibrado);
-                    
-                    listaCocoDesfibrado.push(parseInt(cocoDesfibrado.producaoDiariaCocoDesfibrado));
+                lista.totalFardosWrapper.forEach(fardos => {
+                    listaFardos.push(parseInt(fardos.producaoDiariaTotalFardos));
                 });
 
-                lista.cocoProcessadoWrappers.forEach(cocoProcessado => {
-                    console.log(cocoProcessado);
-                    listaCocoProcessado.push(parseInt(cocoProcessado.producaoDiariaCocoProcessado));
-                });
-
-                series.push(listaCocoDesfibrado);
-                series.push(listaCocoProcessado);
+                series.push(listaFardos);
 
             }
         );
 
-        const dataDay2 = {
+        const dataMonth = {
             labels: labels,
             series: series
         };
@@ -91,7 +80,7 @@ export class CocosComponent implements OnInit {
             }]
         ];
 
-        new Chartist.Line('#cocoChart', dataDay2, options, responsiveOptions);
+        new Chartist.Line('#numeroFardosChart', dataMonth, options, responsiveOptions);
     }
 
 }

@@ -52,14 +52,14 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit() {
-    //this.criFlococoChart();
-    //this.cocoChart();
-    this.oleoChart();
-    //this.cocoSococoCocoVerdeChart();
+    // this.criFlococoChart();
+    // this.cocoChart();
+    // this.oleoChart();
+    // this.cocoSococoCocoVerdeChart();
     this.caixaPadraoChart();
     this.cocoGerminadorChart();
     this.totalDeCacambasChart();
-    this.numeroFardosChart();
+    // this.numeroFardosChart();
 
     // this.examplePizza();
     // this.exempleLineHours();
@@ -92,10 +92,7 @@ export class DashboardComponent implements OnInit {
 
 
 
-  
-
-  oleoChart() {
-
+  cocoSococoCocoVerdeChart() {
     const oleoOption = {
       seriesDistance: 10,
       showPoint: true,
@@ -125,7 +122,7 @@ export class DashboardComponent implements OnInit {
       }]
     ];
 
-    new Chartist.Line('#oleoChart', this.dataDay, oleoOption, responsiveOption);
+    new Chartist.Line('#cocoSococoCocoVerdeChart', this.dataDay, oleoOption, responsiveOption);
 
   }
 
