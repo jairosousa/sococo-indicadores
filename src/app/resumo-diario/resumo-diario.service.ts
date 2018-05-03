@@ -78,4 +78,12 @@ export class ResumoDiarioService {
             })
             .catch(ErrorHandler.handlerError);
     }
+
+    public getCacambaPorAno(ano: number): Observable<any> {
+        return this.http.get(`${environment.base_url}/dashboard/resumo-diario-cacamba/${ano}`)
+            .map((response: Response) => {
+                return response;
+            })
+            .catch(ErrorHandler.handlerError);
+    }
 }
