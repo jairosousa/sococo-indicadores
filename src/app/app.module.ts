@@ -29,6 +29,7 @@ import { CriFlococoComponent } from './dashboard/cri-flococo/cri-flococo.compone
 import { OleoComponent } from './dashboard/oleo/oleo.component';
 import { AguaCocoComponent } from './dashboard/agua-coco/agua-coco.component';
 import { FardoComponent } from './dashboard/fardo/fardo.component';
+import { LoginModule } from './login/login.module';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { FardoComponent } from './dashboard/fardo/fardo.component';
     AppRoutes,
     HttpModule,
     FormsModule,
+    LoginModule,
     ReactiveFormsModule,
     SidebarModule,
     NavbarModule,
