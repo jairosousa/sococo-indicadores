@@ -58,7 +58,7 @@ export class DashboardComponent implements OnInit {
     // this.cocoSococoCocoVerdeChart();
     this.caixaPadraoChart();
     this.cocoGerminadorChart();
-    this.totalDeCacambasChart();
+    // this.totalDeCacambasChart();
     // this.numeroFardosChart();
 
     // this.examplePizza();

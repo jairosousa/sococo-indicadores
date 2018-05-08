@@ -29,6 +29,7 @@ import { CriFlococoComponent } from './dashboard/cri-flococo/cri-flococo.compone
 import { OleoComponent } from './dashboard/oleo/oleo.component';
 import { AguaCocoComponent } from './dashboard/agua-coco/agua-coco.component';
 import { FardoComponent } from './dashboard/fardo/fardo.component';
+import { CacambaComponent } from './dashboard/cacamba/cacamba.component';
 import { LoginModule } from './login/login.module';
 
 
@@ -47,7 +48,8 @@ import { LoginModule } from './login/login.module';
     CriFlococoComponent,
     OleoComponent,
     AguaCocoComponent,
-    FardoComponent
+    FardoComponent,
+    CacambaComponent
   ],
   imports: [
     BrowserModule,
