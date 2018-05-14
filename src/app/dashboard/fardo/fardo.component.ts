@@ -15,12 +15,12 @@ export class FardoComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.fardoChart();
+        this.selectYear();
     }
 
-    fardoChart() {
+    selectYear() {
 
-        const labels: string[] = [];
+        const labels: string[] = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
         const series: any[] = [];
 
         const listaFardos: number[] = [];
@@ -32,9 +32,9 @@ export class FardoComponent implements OnInit {
 
                 const lista = JSON.parse(resp._body);
 
-                lista.mesLancamentoWrappers.forEach(mes => {
-                    labels.push(mes.mesLancamento);
-                });
+               /* lista.mesLancamentoWrappers.forEach(mes => {
+                    labels.push(mes.mesAnoLancamento);
+                });*/
 
                 lista.totalFardosWrapper.forEach(fardos => {
                     listaFardos.push(parseInt(fardos.producaoDiariaTotalFardos));
@@ -83,4 +83,70 @@ export class FardoComponent implements OnInit {
         new Chartist.Line('#numeroFardosChart', dataMonth, options, responsiveOptions);
     }
 
+
+    selectMonth() {
+
+        const labels: string[] = [];
+        const series: any[] = [];
+
+        const listaFardos: number[] = [];
+        // const producaoMes: any[] = [];
+
+        const ano = 2018;
+        const mes = 4;
+        this.resumoDiarioService.getFardoPorMes(ano, mes).subscribe(
+            (resp) => {
+
+                const lista = JSON.parse(resp._body);
+
+                lista.mesLancamentoWrappers.forEach(mes => {
+                    labels.push(mes.mesAnoLancamento);
+                });
+
+                lista.totalFardosWrapper.forEach(fardos => {
+                    listaFardos.push(parseInt(fardos.producaoDiariaTotalFardos));
+                });
+
+                series.push(listaFardos);
+
+            }
+        );
+
+        const dataMonth = {
+            labels: labels,
+            series: series
+        };
+
+        const options = {
+            seriesDistance: 10,
+            showPoint: true,
+            axisX: {
+                showGrid: false
+            },
+            height: '245px',
+            plugins: [
+                ctPointLabels({
+                    textAnchor: 'middle',
+                    labelInterpolationFnc: function (value) {
+                        return value % 4 === 0 ? + value : '';
+                        // labelInterpolationFnc: function (value) { return '$' + value.toFixed(2)}
+                    }
+                })
+            ]
+        };
+
+        const responsiveOptions: any[] = [
+            ['screen and (max-width: 640px)', {
+                seriesDistance: 5,
+                axisX: {
+                    labelInterpolationFnc: function (value, index) {
+                        return index % 4 === 0 ? + value : null;
+                        // return value[0];
+                    }
+                }
+            }]
+        ];
+
+        new Chartist.Line('#numeroFardosChart', dataMonth, options, responsiveOptions);
+    }
 }

@@ -30,6 +30,7 @@ import { OleoComponent } from './dashboard/oleo/oleo.component';
 import { AguaCocoComponent } from './dashboard/agua-coco/agua-coco.component';
 import { FardoComponent } from './dashboard/fardo/fardo.component';
 import { CacambaComponent } from './dashboard/cacamba/cacamba.component';
+import { TortaComponent } from './dashboard/torta/torta.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { CacambaComponent } from './dashboard/cacamba/cacamba.component';
     OleoComponent,
     AguaCocoComponent,
     FardoComponent,
-    CacambaComponent
+    CacambaComponent,
+    TortaComponent
   ],
   imports: [
     BrowserModule,

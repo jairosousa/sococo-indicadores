@@ -4,11 +4,11 @@ import * as Chartist from 'chartist';
 import * as ctPointLabels from 'chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.js';
 
 @Component({
-    selector: 'app-chart-agua-coco',
-    templateUrl: 'agua-coco.component.html'
+    selector: 'app-chart-torta',
+    templateUrl: 'torta.component.html'
 })
 
-export class AguaCocoComponent implements OnInit {
+export class TortaComponent implements OnInit {
 
     constructor(
         private resumoDiarioService: ResumoDiarioService
@@ -23,30 +23,23 @@ export class AguaCocoComponent implements OnInit {
         const labels: string[] = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
         const series: any[] = [];
 
-        const listaAguaCocoSococo: number[] = [];
-        const listaAguaCocoVerde: number[] = [];
-        // const producaoMes: any[] = [];
+        const listaTorta: number[] = [];
 
         const ano = 2018;
-        this.resumoDiarioService.getAguaCocoPorAno(ano).subscribe(
+        this.resumoDiarioService.getTortaPorAno(ano).subscribe(
             (resp) => {
 
                 const lista = JSON.parse(resp._body);
 
-               /* lista.mesLancamentoWrappers.forEach(mes => {
+                /*lista.mesLancamentoWrappers.forEach(mes => {
                     labels.push(mes.mesAnoLancamento);
                 });*/
 
-                lista.aguaCocoSococoWrappers.forEach(aguaSococo => {
-                    listaAguaCocoSococo.push(parseInt(aguaSococo.producaoDiariaAguaCocoSococo));
+                lista.tortaWrapper.forEach(torta => {
+                    listaTorta.push(parseInt(torta.producaoDiariaTorta));
                 });
 
-                lista.aguaCocoVerdeWrappers.forEach(aguaCocoVerde => {
-                    listaAguaCocoVerde.push(parseInt(aguaCocoVerde.producaoDiariaAguaCocoVerde));
-                });
-
-                series.push(listaAguaCocoSococo);
-                series.push(listaAguaCocoVerde);
+                series.push(listaTorta);
 
             }
         );
@@ -86,22 +79,19 @@ export class AguaCocoComponent implements OnInit {
             }]
         ];
 
-        new Chartist.Line('#aguaCocoChart', dataMonth, options, responsiveOptions);
+        new Chartist.Line('#tortaChart', dataMonth, options, responsiveOptions);
     }
-
 
     selectMonth() {
 
         const labels: string[] = [];
         const series: any[] = [];
 
-        const listaAguaCocoSococo: number[] = [];
-        const listaAguaCocoVerde: number[] = [];
-        // const producaoMes: any[] = [];
+        const listaTorta: number[] = [];
 
         const ano = 2018;
         const mes = 4;
-        this.resumoDiarioService.getAguaCocoPorMes(ano, mes).subscribe(
+        this.resumoDiarioService.getTortaPorMes(ano, mes).subscribe(
             (resp) => {
 
                 const lista = JSON.parse(resp._body);
@@ -110,16 +100,13 @@ export class AguaCocoComponent implements OnInit {
                     labels.push(mes.mesAnoLancamento);
                 });
 
-                lista.aguaCocoSococoWrappers.forEach(aguaSococo => {
-                    listaAguaCocoSococo.push(parseInt(aguaSococo.producaoDiariaAguaCocoSococo));
+                lista.tortaWrapper.forEach(torta => {
+                    listaTorta.push(parseInt(torta.producaoDiariaTorta));
                 });
 
-                lista.aguaCocoVerdeWrappers.forEach(aguaCocoVerde => {
-                    listaAguaCocoVerde.push(parseInt(aguaCocoVerde.producaoDiariaAguaCocoVerde));
-                });
+                
 
-                series.push(listaAguaCocoSococo);
-                series.push(listaAguaCocoVerde);
+                series.push(listaTorta);
 
             }
         );
@@ -159,7 +146,7 @@ export class AguaCocoComponent implements OnInit {
             }]
         ];
 
-        new Chartist.Line('#aguaCocoChart', dataMonth, options, responsiveOptions);
+        new Chartist.Line('#tortaChart', dataMonth, options, responsiveOptions);
     }
 
 }
