@@ -30,11 +30,10 @@ import { OleoComponent } from './dashboard/oleo/oleo.component';
 import { AguaCocoComponent } from './dashboard/agua-coco/agua-coco.component';
 import { FardoComponent } from './dashboard/fardo/fardo.component';
 import { CacambaComponent } from './dashboard/cacamba/cacamba.component';
-<<<<<<< HEAD
 import { TortaComponent } from './dashboard/torta/torta.component';
-=======
 import { LoginModule } from './login/login.module';
->>>>>>> 7e40ceed3b1216313514c7f13d07193af3363c1b
+import { CocoGerminadoComponent } from './dashboard/coco-germinado/coco-germinado.component';
+import { CaixaPadraoComponent } from './dashboard/caixa-padrao/caixa-padrao.component';
 
 
 @NgModule({
@@ -54,7 +53,9 @@ import { LoginModule } from './login/login.module';
     AguaCocoComponent,
     FardoComponent,
     CacambaComponent,
-    TortaComponent
+    TortaComponent,
+    CocoGerminadoComponent,
+    CaixaPadraoComponent
   ],
   imports: [
     BrowserModule,

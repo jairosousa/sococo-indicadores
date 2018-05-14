@@ -1,0 +1,44 @@
+<div class="col-md-6">
+    <div class="card ">
+        <div class="header">
+            <h4 class="title">Produção Diária de Coco Germinado (%)</h4>
+            <p class="category">Abril de 2018</p>
+        </div>
+        <div class="content">
+            <div class="row">
+                <!-- <div class="col-md-12">
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default">ANO</button>
+                            <button type="button" class="btn btn-default">MÊS</button>
+                            <button type="button" class="btn btn-default">DIA</button>
+                        </div>
+                    </div> -->
+                <div class="col-md-12">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default active" (click)="selectYear()">
+                            <input type="radio" name="options" id="ano"  autocomplete="off" checked> ANO
+                          </label>
+                        <label class="btn btn-default" (click)="selectMonth()">
+                            <input type="radio" name="options" id="mes"  autocomplete="off"> MÊS
+                          </label>
+                        <!-- <label class="btn btn-default" (click)="selectDay()">
+                            <input type="radio" name="options" id="dia" autocomplete="off"> DIA
+                          </label> -->
+                    </div>
+                </div>
+            </div>
+            <div id="caixaPadraoChart" class="ct-chart"></div>
+
+            <div class="footer">
+                <div class="chart-legend">
+                    <i class="fa fa-circle text-info"></i> Coco Germinado
+                    <i class="fa fa-circle text-warning"></i> ---
+                </div>
+                <hr>
+                <div class="stats">
+                    <i class="ti-check"></i> 22/04/2018
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
