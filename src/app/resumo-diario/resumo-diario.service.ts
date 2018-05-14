@@ -39,7 +39,7 @@ export class ResumoDiarioService {
     }
 
     public getCocoPorAno(ano: number): Observable<any> {
-        return this.http.get(`${environment.base_url}/dashboard/resumo-diario-coco/${ano}`)
+        return this.http.get(`${environment.base_url}/dashboard/resumo-coco-por-ano/${ano}`)
             .map((response: Response) => {
                 return response;
             })
@@ -47,7 +47,7 @@ export class ResumoDiarioService {
     }
 
     public getCriFlococoPorAno(ano: number): Observable<any> {
-        return this.http.get(`${environment.base_url}/dashboard/resumo-diario-cri-flococo/${ano}`)
+        return this.http.get(`${environment.base_url}/dashboard/resumo-cri-flococo-por-ano/${ano}`)
             .map((response: Response) => {
                 return response;
             })
@@ -55,7 +55,7 @@ export class ResumoDiarioService {
     }
 
     public getOleoPorAno(ano: number): Observable<any> {
-        return this.http.get(`${environment.base_url}/dashboard/resumo-diario-oleo/${ano}`)
+        return this.http.get(`${environment.base_url}/dashboard/resumo-oleo-por-ano/${ano}`)
             .map((response: Response) => {
                 return response;
             })
@@ -63,7 +63,7 @@ export class ResumoDiarioService {
     }
 
     public getAguaCocoPorAno(ano: number): Observable<any> {
-        return this.http.get(`${environment.base_url}/dashboard/resumo-diario-agua-coco/${ano}`)
+        return this.http.get(`${environment.base_url}/dashboard/resumo-agua-coco-por-ano/${ano}`)
             .map((response: Response) => {
                 return response;
             })
@@ -72,7 +72,7 @@ export class ResumoDiarioService {
 
 
     public getFardoPorAno(ano: number): Observable<any> {
-        return this.http.get(`${environment.base_url}/dashboard/resumo-diario-fardo/${ano}`)
+        return this.http.get(`${environment.base_url}/dashboard/resumo-fardo-por-ano/${ano}`)
             .map((response: Response) => {
                 return response;
             })
@@ -80,7 +80,7 @@ export class ResumoDiarioService {
     }
 
     public getCacambaPorAno(ano: number): Observable<any> {
-        return this.http.get(`${environment.base_url}/dashboard/resumo-diario-cacamba/${ano}`)
+        return this.http.get(`${environment.base_url}/dashboard/resumo-cacamba-por-ano/${ano}`)
             .map((response: Response) => {
                 return response;
             })
