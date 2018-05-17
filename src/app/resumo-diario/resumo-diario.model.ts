@@ -11,6 +11,7 @@ export class ResumoDiario {
         public torta: string,
 
         public aguaDeCocoSococo: string,
+        public caixaPadrao: string,
         public aguaDeCocoVerde: string,
         public numeroDeFardos: string,
         public porcentagemCocoGerminado: string,

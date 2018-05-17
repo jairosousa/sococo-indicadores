@@ -38,6 +38,7 @@ export class ResumoDiarioComponent implements OnInit {
       this.formulario.value.oleoIndustrialTipoA,
       this.formulario.value.torta,
       this.formulario.value.aguaDeCocoSococo,
+      this.formulario.value.caixaPadrao,
       this.formulario.value.aguaDeCocoVerde,
       this.formulario.value.numeroDeFardos,
       this.formulario.value.porcentagemCocoGerminado,

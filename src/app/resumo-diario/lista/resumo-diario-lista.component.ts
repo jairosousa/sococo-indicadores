@@ -29,6 +29,6 @@ export class ResumoDiarioListaComponent implements OnInit {
   }
 
   public listaHeaderRow(): void {
-    this.headerRow = ['ID', 'Data', 'Cocos Desfibrados', 'Cocos Processados', 'CRI', 'Flococo', 'O.I. ETE', 'O. I. Tipo A', 'Torta'];
+    this.headerRow = ['ID', 'Data', 'Cocos Desfibrados','Caixa Padrão', 'Cocos Processados', 'CRI', 'Flococo', 'O.I. ETE', 'O. I. Tipo A', 'Torta'];
   }
 }
